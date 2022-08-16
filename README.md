@@ -18,8 +18,7 @@
 * [Development Topic](#Development-Topic)
 * [Online Demo](#Online-Demo)    
 
-## About
-(로고 이미지)     
+## About  
    
 **LookLock** is a aggregator platform to make it easy to approach all lockdrop projects in Polygon ecosystem.   
    
