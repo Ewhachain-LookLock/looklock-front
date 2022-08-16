@@ -54,7 +54,7 @@ If investors want to know more about the project, they can see detailed informat
 
 Investors can check the status of their investments and unclock the token as the project ends.   
 
-(대보드 사진)   
+(대시보드 캡쳐본)   
 Projects launchers can start their projects or see the projects’ progression in admin page.
 
 ## Development Topic
