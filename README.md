@@ -18,9 +18,7 @@
 * [Development Topic](#Development-Topic)
 * [Online Demo](#Online-Demo)    
 
-## About  
-   
-**LookLock** is a aggregator platform to make it easy to approach all lockdrop projects in Polygon ecosystem.   
+## About   
    
 Till now all of the lockdrop investments have been made on projects’ own websites. Investors should find scattered investment information by themselves, and project launchers should promote and conduct all the lock&drop processes. This is why we devised Lockdrop aggregator platform, LookLock.   
    
