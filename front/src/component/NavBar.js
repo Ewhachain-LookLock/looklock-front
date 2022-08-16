@@ -96,7 +96,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork}) 
                 <div class= "wallet">
                     <button disabled class = "wallet-btn">{currentAccount}</button>
                 </div>
-                )};
+                )}
             </div>
         </nav>
         <Outlet/>

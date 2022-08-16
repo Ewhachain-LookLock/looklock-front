@@ -56,3 +56,119 @@
 .yet {
     background-color: #727272;
 }
+
+/* PROJECT CONTAINER  */
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: 35px 50px 110px 160px 240px 180px 120px 110px;
+    /* #, ICON, NAME, REWARD, PERIOD, MINIMUM, PHASE, MORE */
+    column-gap: 17px;
+}
+
+.grid-item {
+    display: inline-block;
+    /* border: 1px solid pink; */
+}
+
+.grid-item:nth-child(4) {
+    margin-right: 40px;
+}
+
+.grid-item:nth-child(5) {
+    margin-right: 40px;
+}
+
+.grid-item:nth-child(6) {
+    margin-right: 80px;
+}
+
+.grid-item:nth-child(7) {
+    margin-right: 20px;
+}
+
+/* GRID ITEM STYLE CUSTOM */
+
+.project-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: #CDCDCD;
+}
+
+
+#zelo-logo {
+    display: flex;
+    width: 50px;
+    height: auto;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.project-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: #EFEFEF;
+}
+
+.project-rewards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: #32CAEC;
+}
+
+.project-lock-periods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #CDCDCD;
+}
+
+.project-minimum-amount {
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #CDCDCD;
+}
+
+.project-phase1 {
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #32CAEC;
+    margin: 3px 0;
+    border: 1px solid #32CAEC;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.project-more {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 3px 0;
+    background: #2745E2;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}

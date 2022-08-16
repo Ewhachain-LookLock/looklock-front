@@ -1,0 +1,91 @@
+#project-wrapper {
+    margin: 0px 250px;
+}
+
+#project-h1 {
+    text-align: left;
+}
+
+
+/* +++++++++++++ */
+/* TOP3 PROJECTS */
+/* +++++++++++++ */
+
+.project-header {
+    position: relative;
+    width: 1260px;
+    left: 50%;
+    transform: translate(-50%);
+    height: auto;
+    margin-top: 80px;
+    margin-left: 30px;
+    /* border: 3px solid red; */
+    float: left;
+    
+}
+
+.project-header ul {
+    display: grid;
+    grid-template-columns: 30px 180px 160px 220px 200px 130px 110px;
+    /* #, ICON, NAME, REWARD, PERIOD, MINIMUM, PHASE, MORE */
+    column-gap: 17px;
+    color: #CDCDCD;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.project-header ul li {
+    list-style: none;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    /* margin-left: -50px; */
+    /* margin-right: 20px; */
+}
+
+.project-header ul li:first-child {
+    /* margin-right: 50px; */
+}
+
+.project-header ul li:nth-child(2) {
+    /* margin-right: 150px; */
+}
+
+.project-header ul li:nth-child(3) {
+    /* margin-right: 150px; */
+}
+
+.project-header ul li:nth-child(4) {
+    /* margin-right: 150px; */
+}
+
+.project-header ul li:nth-child(5) {
+    margin-right: 80px;
+}
+
+
+.project-rect-cont {
+    position: relative;
+    width: 1200px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 0px;
+}
+
+.project-rect {
+    position: relative;
+    width: 1200px;
+    height: 40px;
+    margin: 10px 0px;
+    padding: 30px;
+    background: linear-gradient(89.46deg, rgba(219, 172, 255, 0.15) 9.33%, rgba(78, 255, 223, 0.15) 96.25%);
+    /* background: linear-gradient(89.46deg, #DBACFF 9.33%, #4EFFDF 96.25%); */
+    border-radius: 10px;
+    color: #CDCDCD;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
