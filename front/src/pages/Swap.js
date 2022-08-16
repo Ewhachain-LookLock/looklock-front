@@ -11,15 +11,13 @@ const Swap = () => {
   const [amounts, setAmmounts] = useState('');
   // const [modalOpen, setModalOpen] = useState(false);
   // Modal control
-  const open = document.getElementById("openModal");
-  const close = document.getElementById("closeModal");
-  const modal = document.querySelector(".modal-wrapper");
+  const [modalOpen, setModalOpen] = useState(false);
 
-  open.onclick = () => {
-    modal.style.display = "flex";
+  const openModal = () => {
+    setModalOpen(true);
   };
-  close.onclick = () => {
-    modal.style.display = "none";
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   const onChange = (e) => {
@@ -33,21 +31,12 @@ const Swap = () => {
       const lolo = new ethers.Contract(contractAddress, Lolo.abi, signer);
 
       let swapTx = await lolo.swapForTest(amounts);
-
-      // const openModal = () => {
-      //   setModalOpen(true);
-      // };
+      this.openModal();
     }catch {
       console.log("Error while swapping");
+      this.openModal();
     }
   };
-
-//  const openModal = () => {
-//    setModalOpen(true);
-//  };
-  // const closeModal = () => {
-  //   setModalOpen(false);
-  // };
 
 
 
@@ -103,17 +92,15 @@ const Swap = () => {
             <button class="purple-gradient-btn" type="button" id="openModal" onClick={handleSwap}>
               Swap
             </button>
-            <div class="modal-wrapper" style="display: none;">
+            <Modal open={modalOpen} close={closeModal} header="Alert">
               { /*Success*/}
-              <div class="modal success-modal">
-                <img id="swap-success-img" src={require('../Assets/lockdrop-success-alert.png')} alt="Swap-Success" />      
-                <div class='swap-success'>
-                  <button class="success-btn" type="button" id="closeModal">
-                    Done
-                  </button>
-                </div>    
-              </div>
-            </div>
+              <img id="swap-success-img" src={require('../Assets/lockdrop-success-alert.png')} alt="Swap-Success" />      
+              <div class='swap-success'>
+                <button class="success-btn" type="button" id="swap-success-btn" onClick={closeModal}>
+                  Done
+                </button>
+              </div>    
+            </Modal>
           </div>  {/* end of swap-wrapper */}
         </div>
         <Footer/>
