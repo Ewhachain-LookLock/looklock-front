@@ -87,7 +87,7 @@
     position: absolute;
     width: 3vw;
     left: 2.5vw;
-    top: 6.5vh;
+    top: 7vh;
 }
 
 .from-token-name {
@@ -138,7 +138,7 @@
     position: absolute;
     width: 3vw;
     left: 2.5vw;
-    top: 6.5vh;
+    top: 7vh;
 }
 
 .to-token-name {
@@ -176,7 +176,8 @@
     top: 10vh;
     color: #CDCDCD;
 }
-#swap-btn {
+
+#openModal {
     position: absolute;
     align-items: center;
 
@@ -186,4 +187,17 @@
     bottom: 1vh;
     width: 30vw;
     height: 6vh;
+}
+
+#swap-success-img {
+    position: relative;
+    left: 0vw;
+    top: 7.5vh;
+
+}
+
+.success-btn {
+    position: relative;
+    top: 15vh;
+    
 }

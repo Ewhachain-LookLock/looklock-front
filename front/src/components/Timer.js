@@ -1,18 +1,23 @@
 import './Style.css';
+import { useState } from 'react';
 
 const Timer = (props ) => {
+
+    const [days,setDays] = useState(0);
+    const [hours,setHours] = useState(0);
+    const [minutes,setMinutes] = useState(0);
+    const [seconds,setSeconds] = useState(0);
     // https://www.w3schools.com/howto/howto_js_countdown.asp
     // Set the date we're counting down to
-    var countDownDate = new Date(props.duedate).getTime();
-
+    const countDownDate = new Date(props.duedate).getTime();
     // Update the count down every 1 second
-    var x = setInterval(function() {
-
+    const x = setInterval(function() {
+    if (!countDownDate) return null;
     // Get today's date and time
-    var now = new Date().getTime();
-        
+    const now = new Date().getTime();
+    
     // Find the distance between now and the count down date
-    var distance = countDownDate - now;
+    const distance = countDownDate - now;
         
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -21,8 +26,16 @@ const Timer = (props ) => {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
     // Output the result in an element with id="timer-clock"
-    document.getElementById("timer-clock").innerHTML = days + " : " + hours + " : "
-    + minutes + " : " + seconds;
+    // document.getElementById("timer-clock").innerHTML = days + " : " + hours + " : "
+    // + minutes + " : " + seconds;
+    // const clock=() =>{
+    //   return days + " : " + hours + " : "
+    //   + minutes + " : " + seconds;
+    // }
+    setDays(days);
+    setHours(hours);
+    setMinutes(minutes);
+    setSeconds(seconds);
         
     // If the count down is over, write some text 
     if (distance < 0) {
@@ -33,7 +46,7 @@ const Timer = (props ) => {
 
     return (
       <div>
-        <span id="timer-clock"></span>
+        <span id="timer-clock">{days + " : " + hours + " : "+ minutes + " : " + seconds}</span>
         <div id='timer-header'>
           <span>DATES</span>
           <span>HOURS</span>

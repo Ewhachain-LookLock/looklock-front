@@ -1,0 +1,62 @@
+
+.register-container{
+    margin-top: 20px;
+}
+.go-back{
+    
+    color: inherit;
+    font-size: 2rem;
+    text-decoration: none;
+    float: left;
+    margin-left: 5vw;
+    margin-bottom: 5vh;
+}
+
+.go-back :link{
+    text-decoration: none;
+    text-decoration-color: #6B6B6B;
+}
+a{
+    color: #6B6B6B;
+}
+
+.register-wrapper{
+    clear:both;
+    background: #181825;
+    border-radius: 10px;
+    margin: 5vh 25vw;
+    padding: 5vh 1vw;
+}
+
+.register-wrapper > h1{
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 0 2vw;
+}
+
+.detail-wrapper > h3{
+    font-size: 1.25rem;
+    text-align: left;
+    margin: 5vh 2vw 0;
+}
+.register-txt .register-comment{
+    color: #CDCDCD;
+    font-size: 1rem;
+    text-align: left;
+    margin: 2vh 2vw 0;
+
+}
+
+.register-comment{
+    color: rgba(205, 205, 205, 0.49);
+}
+
+.phase1-txt{
+    color: #32CAEC;
+    font-weight: bold;
+}
+
+.phase2-txt{
+    color: #1EDC81;
+    font-weight: bold;
+}

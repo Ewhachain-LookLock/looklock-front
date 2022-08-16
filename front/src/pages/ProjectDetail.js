@@ -13,7 +13,7 @@ const ProjectDetail = (props) => {
     const [amounts, setAmmounts] = useState('');
     // const [phase1Due, setPhase1Due] = useState(new Date());
     // const [phase2Due, setPhase2Due] = useState(new Date());
-    // const [dueDate, setDueDate] = useState(new Date());
+    const [dueDate, setDueDate] = useState();
 
     const [state, dispatch] = useReducer(reducer, {
         loading: false,
@@ -31,6 +31,7 @@ const ProjectDetail = (props) => {
             
             await setCurrentPhase(getPhase(response.data[0]))
         } catch (e) {
+            console.log(error);
             dispatch({type :'ERROR', error:e})
         }
     };
@@ -44,47 +45,57 @@ const ProjectDetail = (props) => {
 
     const getPhase = (project) => {
         const now = new Date().getTime();
-        const phase1due = new Date(project.startDate);
-        phase1due.setDate(phase1due.getDate() + Number(project.phase1period));
+        const phase1due = getPhase1Due(project);
+        let phase = ""
        
         if (now > phase1due.getTime()) {
-            return "PHASE 2";
+            setDueDate(getPhase2Due(project));
+            phase = "PHASE 2";
         }
-        return "PHASE 1";
+        else{
+            setDueDate(phase1due);
+            phase = "PHASE 1"
+        }
+        
+        return phase;
 
     };
 
-    const getDueDate = (project) =>{
-        if (currentPhase === "PHASE 1") {
-            const endDate = new Date(project.startDate);
-            endDate.setDate(endDate.getDate() + Number(project.phase1period));
-            return endDate;
-        }
-        else {
-            const startDate =  new Date(project.startDate);
-            startDate.setDate(startDate.getDate() +( Number(project.phase1period) +1));
-            const sum = project.phase2periods.reduce((partialsum, item) => partialsum + item.days, 0);
-            const endDate = new Date(startDate);
-            endDate.setDate(endDate.getDate() + sum);
-            return endDate;
-        }
-    };
-
-
-    const getPhase1Period = (project) => {
-        const startDate =  new Date(project.startDate);
+    const getPhase1Due= (project) => {
         const endDate = new Date(project.startDate);
         endDate.setDate(endDate.getDate() + Number(project.phase1period));
+        return endDate;
+    }
+    
+    const getPhase1Period = (project) => {
+        const startDate =  new Date(project.startDate);
+        const endDate = getPhase1Due(project);
+        // const endDate = new Date(project.startDate);
+        // endDate.setDate(endDate.getDate() + Number(project.phase1period));
         //setPhase1Due(endDate);
+        
         return dateFormatter(startDate)+ '~' + dateFormatter(endDate);
     };
 
-    const getPhase2Period =(project) => {
+    const getPhase2Due = (project)=> {
         const startDate =  new Date(project.startDate);
         startDate.setDate(startDate.getDate() +( Number(project.phase1period) +1));
         const sum = project.phase2periods.reduce((partialsum, item) => partialsum + item.days, 0);
         const endDate = new Date(startDate);
         endDate.setDate(endDate.getDate() + sum);
+
+        return endDate;
+    }
+
+    const getPhase2Period =(project) => {
+        // const startDate =  new Date(project.startDate);
+        // startDate.setDate(startDate.getDate() +( Number(project.phase1period) +1));
+        // const sum = project.phase2periods.reduce((partialsum, item) => partialsum + item.days, 0);
+        // const endDate = new Date(startDate);
+        // endDate.setDate(endDate.getDate() + sum);
+        const startDate =getPhase1Due(project);
+        startDate.setDate(startDate.getDate() +1);
+        const endDate = getPhase2Due(project);
         //setPhase2Due(endDate);
         return dateFormatter(startDate)+ '~' + dateFormatter(endDate);
     };
@@ -113,7 +124,7 @@ const ProjectDetail = (props) => {
     }
 
     if (loading) console.log("loading..");
-    if (error) return <div>요청한 데이터가 없습니다. </div>;
+    if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
     if (!project) return <div> no data </div>;
 
     return (
@@ -251,9 +262,9 @@ const ProjectDetail = (props) => {
                 <div id='lockup-wrapper'>
                     <div id='lockup-container'>
                         <div id='timer-wrapper'>
-                            <Timer duedate="Jan 5, 2024 15:37:25"/>
+                            <Timer duedate={dueDate}/>
                             <div>
-                                <span id='phase1'>{getPhase(project[0])}</span>
+                                <span id='phase1'>{currentPhase}</span>
                                 <span id='timeleft'>TIME LEFT IN THIS PHASE</span>
                             </div>
                         </div>
@@ -314,12 +325,7 @@ const ProjectDetail = (props) => {
                 <div id='info'>
                 <h3>Project<br/>Information</h3>
                 <p>
-                Zelo protocol is web3’s automation network, enabling developers to automate & relay arbitrary smart contract executions on and across all EVM-based compatible
-                blockchains such as Ethereum.
-                <br/><br/>
-                Zelo’s goal is to provide developers with a reliable, scalable & decentralized network to which they can outsource all of their web3 related DevOps operations.
-                <br/><br/>
-                ► Check out what we’ve been working on at https://zelo.protocol
+                {project[0].information}
                 <br/><br/>
                 Connect with us:
                 <br/><br/>
