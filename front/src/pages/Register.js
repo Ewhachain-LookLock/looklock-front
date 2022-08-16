@@ -1,12 +1,15 @@
 import Footer from '../component/Footer';
 import './Register.css';
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
       <body>
         <div class='register-container d-flex flex-column'>
-          <div class='go-back'></div>
+          <div class='go-back'>
+            <Link to="/admin">← Go Back</Link>
+          </div>
           {/* 1. about project */}
           <div class='about-project-wrapper register-wrapper d-flex flex-column justify-content-center'>
             <h1>1. Tell about your project</h1>
@@ -41,10 +44,22 @@ const Register = () => {
           {/* 2. about token rewards */}
           <div class='token-rewards-wrapper register-wrapper d-flex flex-column'>
             <h1>2. Tell about your token rewards plan</h1>
-            <div class='token-name'></div>
-            <div class='token-address'></div>
-            <div class='total-token-rewards'>
-              <div class='token-rewards-chart'>표</div>
+            <div class='token-name'>
+              <div class='register-txt'>Token name</div>
+              Input
+              <div class='register-comment'>※ not needed if you use LOLO token</div>
+            </div>
+            <div class='token-address'>
+              <div class='register-txt'>Contract address</div>
+              Input
+              <div class='register-comment add-address add-more'>add more..</div>
+            </div>
+            <div class='total-token-rewards detail-wrapper'>
+              <h3>Total token rewards for lockdrop</h3>
+              <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
+              <div class='token-rewards-table'>표
+                <div class='register-comment add-table add-more'>add more..</div>   
+              </div>
             </div>
 
           </div>
@@ -52,15 +67,42 @@ const Register = () => {
           {/* 3. about lockdrop period */}
           <div class='lockdrop-period-wrapper register-wrapper d-flex flex-column'>
             <h1> 3. Tell about lockdrop period </h1>
-            <div class='lockdrop-details d-flex flex-column'>
-              <div class='total-lockdrop-period d-inline-flex'></div>
-              <div class='phase1-period d-inline-flex'></div>
-              <div class='phase2-period d-inline-flex'></div>
-            </div>
-            <div class='withdraw-details-wrapper d-flex'>
-              <div class='withdraw-details d-inline-flex'>
+            <div class='lockdrop-details detail-wrapper d-flex flex-column'>
+              <h3>Lockdrop Period</h3>
+              <div class='total-lockdrop-period d-inline-flex'>
+                <div class='register-txt'>Total Lockdrop Period</div>
+                <div class='period-form'>
+                  dd/mm/yy~
+                </div>
+              </div>
+              <div class='phase1-period d-inline-flex'>
+                <div class='register-txt'>
+                  <span class='phase1-txt'>Phase 1 </span> period (Date)
+                </div>
+                <div class='period-form'></div>
+
+                <div class='phase1-info'>
+                  물음표 + 마우스 오버 효과
+                </div>
+              </div>
+              <div class='phase2-period d-inline-flex'>
+                <div class='register-txt'>
+                  <span class='phase2-txt'>Phase 2 </span> period (Date)
+                </div>
+                <div class='phase2-info'>
+                  물음표 + 마우스 오버 효과
+                </div>
+                <div class='period-form'></div>
 
               </div>
+            </div>
+            <div class='withdraw-details-wrapper detail-wrapper d-flex'>
+              <h3>Withdrawable Percentage for Specific Periods in <span class='phase2-txt'>Phase 2</span>
+              </h3>
+              <div class='withdraw-detail-form d-inline-flex'>
+
+              </div>
+              <div class='register-comment add-more add-withdraw'>add more..</div>
             </div>
           </div>
           {/* end of 3. about lockdrop period */}
