@@ -2,19 +2,28 @@ import Footer from '../component/Footer';
 import './Register.css';
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Select from 'react-select';
 
 const Register = () => {
   const [inputs, setInputs] = useState('');
 
-  const handleChange = (e)=>{
+  const onChange = (e)=>{
     setInputs(e.target.value);
   };  
 
-  // const handleClick = (e) => {
-  //   this.setState({
-  //     input:"",
-  //   })
-  // }
+  const [files, setFiles] = useState('');
+  const onLoadFile = (e) => {
+    const file = e.target.files;
+    console.log(file);
+    setFiles(file);
+  }
+  
+  const projectCategories = [
+    {label: "DeFi", value: 1},
+    {label: "NFT", value: 2},
+    {label: "Gaming", value: 3},
+  ];
+
   return (
     <body>
       <div class='register-container d-flex flex-column'>
@@ -29,26 +38,27 @@ const Register = () => {
               <div class='register-txt'>
                 Project name
               </div>
-              <input type="text" name="projectName" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" name="projectName" placeholder='Enter your project name' onChange={onChange} />
             </div>
-            <div class='project-logo'>
+            <div class='project-logo d-flex flex-wrap flex-column'>
               <div class='register-txt'>
                 Project's logo image
               </div>
               <div class='logo-img d-flex flex-row'>
-              Input
-                <button>Upload</button>
+                {/* <input type="text" readonly="readonly" id="file_route"></input> */}
+                <label class='logo-upload' for='logoImg'>Upload
+                <input type="file" name="projectLogo" id='logoImg' accept='image/png, image/jpeg, image/jpg' onChange={onLoadFile}/>
+                </label>
               </div>
             </div>
-          </div>
-          
+          </div>     
           <div class='project-category'>
             <div class='register-txt'>Category</div>
-            Input
+              {/* <Select options={projectCategories} /> */}
           </div>
           <div class='project-explain'>
             <div class='register-txt'>Project explanation</div>
-            Input
+            <input type="text" name="projectExplanation" placeholder='Enter project detail explanation' onChange={onChange} />
           </div>
         </div>
         {/* end of 1. about project */}
