@@ -1,48 +1,83 @@
 import Footer from '../component/Footer';
 import ProjectBox from '../components/ProjectBox';
 import './Project.css';
-
+import React, {useState, useEffect, useReducer} from 'react';
+import axios from "axios";
+import reducer from "../utils/reducer";
 
 const Project = () => {
-    return (
-      <body>
-        <div id='project-wrapper'>
-          <h1 id='project-h1'>Project</h1>
-          <div class="project-container">
-            <div class="project-header">
-              <ul>
-                <li class='grid-item'>
-                  #
-                </li>
-                <li class='grid-item'>
-                  Name
-                </li>
-                <li class='grid-item'>
-                  Rewards
-                </li>
-                <li class='grid-item'>
-                  Lock Period
-                </li>
-                <li class='grid-item'>
-                  Minimum Amount
-                </li>
-                <li class='grid-item'>
-                  Phase
-                </li>
-                <li class='grid-item'>
-                  Filters
-                </li>
-              </ul>
-            </div>
-            <ProjectBox/>
-            <ProjectBox/>
-            <ProjectBox/>
-            <ProjectBox/>
+  const [count,setCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, {
+    loading: false,
+    data: null,
+    error: null
+  });
+  const getCount = () => {
+    setCount(count+1);
+    return count;
+  }
+  
+  const fetchProjects = async() => {
+    dispatch({type : 'LOADING'});
+        try {
+            const response = await axios.get(
+                'http://localhost:3001/api/project/'
+            );
+            dispatch({type:'SUCCESS', data:response.data});
+        } catch (e) {
+            console.log(error);
+            dispatch({type :'ERROR', error:e})
+        }
+    };
+  
+    useEffect(()=> {
+      fetchProjects();
+  },[]);
+
+  const {loading, data:projects, error } = state;
+
+  if (loading) console.log("loading..");
+  if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
+  if (!projects) return <div> no data </div>;
+
+  return (
+    <body>
+      <div id='project-wrapper'>
+        <h1 id='project-h1'>Project</h1>
+        <div class="project-container">
+          <div class="project-header">
+            <ul>
+              <li class='grid-item'>
+                #
+              </li>
+              <li class='grid-item'>
+                Name
+              </li>
+              <li class='grid-item'>
+                Rewards
+              </li>
+              <li class='grid-item'>
+                Lock Period
+              </li>
+              <li class='grid-item'>
+                Minimum Amount
+              </li>
+              <li class='grid-item'>
+                Phase
+              </li>
+              <li class='grid-item'>
+                Filters
+              </li>
+            </ul>
           </div>
+          { projects.map((item, i) => 
+            <ProjectBox project={item} count = {i+1} />
+          )}
         </div>
-        <Footer/>
-      </body>
-    )
-  };
+      </div>
+      <Footer/>
+    </body>
+  )
+};
   
   export default Project;

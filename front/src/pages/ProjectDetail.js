@@ -3,11 +3,13 @@ import './ProjectDetail.css';
 import Timer from '../components/Timer';
 import BarGraph from '../components/BarGraph'; 
 import { dateFormatter } from "../utils/dateFromatter";
-import React, {useReducer, useState, useEffect, useMemo} from "react";
+import React, {useReducer, useState, useEffect} from "react";
+import {useParams } from 'react-router-dom'
 import axios from "axios";
 import reducer from "../utils/reducer";
 
-const ProjectDetail = (props) => {
+const ProjectDetail = () => {
+    const params = useParams()
     const [currentPhase, setCurrentPhase] = useState('');
     const [selectedDays, setSelectedDays] = useState(0);
     const [amounts, setAmmounts] = useState('');
@@ -24,8 +26,9 @@ const ProjectDetail = (props) => {
     const fetchProject = async () => {
         dispatch({type : 'LOADING'});
         try {
+            console.log(params);
             const response = await axios.get(
-                'http://localhost:3001/api/project/' +  props.title
+                'http://localhost:3001/api/project/' +  params.id
             );
             dispatch({type:'SUCCESS', data:response.data});
             
@@ -38,7 +41,7 @@ const ProjectDetail = (props) => {
 
 
     useEffect(()=> {
-        fetchProject(props.title);
+        fetchProject(params);
     },[]);
 
     const {loading, data:project, error } = state;

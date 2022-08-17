@@ -70,7 +70,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork}) 
                         <Link to="/swap">SWAP</Link>
                     </li>
                     <li>
-                        <Link to="/projectdetail">MY STATUS</Link>
+                        <Link to="/mystatus">MY STATUS</Link>
                     </li>
                     <li>
                         <Link to="/governance">PARTNER</Link>

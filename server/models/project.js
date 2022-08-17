@@ -17,7 +17,7 @@ const projectSchema = new mongoose.Schema({
     collection:'projects' 
 });
 
-projectSchema.static.findAll = function() {
+projectSchema.statics.findAll = function() {
     try {
         const results = this.find({});
         console.log(results);
