@@ -134,7 +134,7 @@ const ProjectDetail = (props) => {
                     <div id='project-name'>
                         <div>
                             {/* 이미지는 나중에 */}
-                            <img id="zelo-img" src={require('../Assets/profile.png')} alt="chain-left"/>
+                            <img id="zelo-img" src={project[0].projectImg} alt="chain-left"/>
                         </div>
                         <h1>{project[0].title}</h1>
                         <div>
