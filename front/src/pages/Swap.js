@@ -1,5 +1,6 @@
 import Footer from '../component/Footer';
-import './Swap.css';
+// import './Swap.css';
+import './Swap2.css';
 import React, { useState } from "react";
 import {ethers} from "ethers";
 import Lolo from "../contracts/Lolo.json";
@@ -44,9 +45,11 @@ const Swap = () => {
     return (
       <body>
         <div class='swap-container'>
+          {/* LEFT */}
           <div class='swap-graph'>
             <img id="swap-graph-img" src={require('../Assets/swap-graph.png')} alt="Swap-Graph" />
           </div>
+          {/* RIGHT */}
           <div class='swap-wrapper'>
             <h1>Swap</h1>
             <div class='to-from-wrapper'>
@@ -55,18 +58,22 @@ const Swap = () => {
                   <span>From</span>
                 </div>
                 <div class='swap-token'>
+                  {/* left */}
                   <div class='from-token'>
                     <span>
-                      <img id="swap-from-eth" src={require('../Assets/eth-logo.png')} alt="from-token-img" />
+                      <img id="swap-from-eth" src={require('../Assets/eth-logo.png')} alt="from-token-img" class='swap-token-img' />
                     </span>
                     <span class='from-token-name'>ETH</span>
+                    <span class="arrow-down"></span>
+
                   </div>
+                  {/* right */}
                   <div class='amount-input from-amount'>
                     <input fromAmount="fromAmount" min='0' placeholder='0' onChange={onChange} value={amounts} type="number"/>
                   </div>
                 </div>
               </div>
-              <span class="arrow-down"></span>
+              <span class="arrow-down" id='divider-arrow'></span>
               <div class='token-wrapper to-wrapper'>
                 <div class='swap-txt to-txt'>
                   <span>To</span>
@@ -74,9 +81,10 @@ const Swap = () => {
                 <div class='swap-token'>
                   <div class='to-token'>
                     <span>
-                      <img id="swap-to-lolo" src={require('../Assets/lolo-logo.png')} alt="to-token-img" />
+                      <img id="swap-to-lolo" src={require('../Assets/lolo-logo.png')} alt="to-token-img" class='swap-token-img'/>
                     </span>
                     <span class='to-token-name'>LOLO</span>
+                    <span class="arrow-down"></span>
                   </div>
                   <div class='amount-input to-amount'>
                     {amounts}
