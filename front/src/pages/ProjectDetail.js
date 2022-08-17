@@ -25,7 +25,7 @@ const ProjectDetail = (props) => {
         dispatch({type : 'LOADING'});
         try {
             const response = await axios.get(
-                'http://localhost:3001/api/project', {params: {title: props.title}}
+                'http://localhost:3001/api/project/' +  props.title
             );
             dispatch({type:'SUCCESS', data:response.data});
             
@@ -127,6 +127,8 @@ const ProjectDetail = (props) => {
     if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
     if (!project) return <div> no data </div>;
 
+    const base64String = btoa(String.fromCharCode(...new Uint8Array(project[0].projectImg.data.data)));
+
     return (
         <div>
             <div id='project-detail-wrapper'>
@@ -134,7 +136,7 @@ const ProjectDetail = (props) => {
                     <div id='project-name'>
                         <div>
                             {/* 이미지는 나중에 */}
-                            <img id="zelo-img" src={project[0].projectImg} alt="chain-left"/>
+                            <img id="zelo-img" src={`data:image/jpg;base64,${base64String}`} alt=""/>
                         </div>
                         <h1>{project[0].title}</h1>
                         <div>

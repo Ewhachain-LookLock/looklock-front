@@ -1,8 +1,22 @@
 var express = require("express");
 var router = express.Router();
 const projectController = require("../controllers/projectController");
+const multer = require('multer');
+const path = require('path')
 
-router.get('/', projectController.read);
-router.post('/', projectController.write);
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, "..", '/public/images/'))
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+});
+  
+const upload = multer({ storage: storage });
+
+router.get('/:title', projectController.read);
+router.post('/', upload.single('projectImg'), projectController.write);
+router.get('/', projectController.readAll);
 
 module.exports = router;

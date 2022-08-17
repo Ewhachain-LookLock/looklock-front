@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const projectSchema = new mongoose.Schema({
     projectImg: {
-        type:String 
+        data:Buffer,
+        contentType:String
     },
     title: {type: String, required:true},
     information: {type:String, required:true}, 
@@ -15,6 +16,16 @@ const projectSchema = new mongoose.Schema({
     timestamps: true,
     collection:'projects' 
 });
+
+projectSchema.static.findAll = function() {
+    try {
+        const results = this.find({});
+        console.log(results);
+        return results;
+    }catch(err) {
+        throw err;
+    }
+};
 
 projectSchema.statics.findByTitle = function(title) {
     try {

@@ -4,7 +4,6 @@ const Governance = ({currentAccount}) => {
   return (
     <body>
       <h1>Governance</h1>
-      <Register />
       <Footer/>
     </body>
   )  };
