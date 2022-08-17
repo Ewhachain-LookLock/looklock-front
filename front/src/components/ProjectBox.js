@@ -65,7 +65,9 @@ const ProjectBox = ({project, count}) => {
                    {getPeriod(project)}
                 </span>
                 <span class='grid-project project-minimum-amount'>
-                    650 LOLO
+                {project.rewards.map( (item) => 
+                                    item.days + " / "
+                            )}
                 </span>
                 <button class='grid-project project-phase1'>
                     {currentPhase}

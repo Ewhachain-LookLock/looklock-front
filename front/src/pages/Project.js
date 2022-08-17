@@ -57,10 +57,10 @@ const Project = () => {
                 Rewards
               </li>
               <li class='grid-item'>
-                Lock Period
+                Project Period
               </li>
               <li class='grid-item'>
-                Minimum Amount
+                Lock Period
               </li>
               <li class='grid-item'>
                 Phase
