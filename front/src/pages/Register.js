@@ -81,21 +81,23 @@ const Register = () => {
         {/* 2. about token rewards */}
         <div class='token-rewards-wrapper register-wrapper d-flex flex-column'>
           <h1>2. Tell about your token rewards plan</h1>
-          <div class='token-name'>
-            <div class='register-txt'>Token name</div>
-            Input
-            <div class='register-comment'>※ not needed if you use LOLO token</div>
-          </div>
-          <div class='token-address'>
-            <div class='register-txt'>Contract address</div>
-            Input
-            <div class='register-comment add-address add-more'>add more..</div>
-          </div>
-          <div class='total-token-rewards detail-wrapper'>
-            <h3>Total token rewards for lockdrop</h3>
-            <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
-            <div class='token-rewards-table'>표
-              <div class='register-comment add-table add-more'>add more..</div>   
+          <div class='about-token-rewards'>
+            <div class='token-name'>
+              <div class='register-txt'>Token name</div>
+              <input type="text" name="tokenName" placeholder='Enter token name' onChange={onChange} />
+              <div class='register-comment'>※ not needed if you use LOLO token</div>
+            </div>
+            <div class='token-address'>
+              <div class='register-txt'>Contract address</div>
+              <input type="text" name="tokenAddress" placeholder='Enter contract address' onChange={onChange} />
+              <div class='register-comment add-address add-more'>add more..</div>
+            </div>
+            <div class='total-token-rewards detail-wrapper'>
+              <h3>Total token rewards for lockdrop</h3>
+              <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
+              <div class='token-rewards-table'>표
+                <div class='register-comment add-table add-more'>add more..</div>   
+              </div>
             </div>
           </div>
 

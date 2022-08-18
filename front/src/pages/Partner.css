@@ -123,6 +123,7 @@
     margin-left: 40px;
 }
 
-.go-to-register-btn :link{
+a{
+    color:#FFFFFF;
     text-decoration: none;
 }
