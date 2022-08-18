@@ -8,6 +8,7 @@
     "start:server": "node ./app.js"
   },
   "dependencies": {
+    "bear-react-dropdown": "^2.1.14",
     "body-parser": "^1.20.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",

@@ -33,7 +33,7 @@ a{
     background: #181825;
     border-radius: 10px;
     margin: 5vh 25vw;
-    padding: 5vh 1vw;
+    padding: 5vh 2.5vw;
     display: flex;
     flex-direction: column;
 }
@@ -42,7 +42,15 @@ a{
     /* font-size: 1.5rem; */
     font-size: 28px;
     text-align: left;
-    margin: 0 2vw;
+    margin: 0 0;
+}
+
+.about-project{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 7em;
+    
 }
 
 .project-info{
@@ -50,16 +58,16 @@ a{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: center; 
-    margin: 1em 1.1em 1.25em 0em;
+    /* justify-content: center;  */
+    margin: 1em 0;
 }
 
 .project-category{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 1.1em 1.25em 1.5em;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 1em 0em;
 
 }
 
@@ -85,6 +93,10 @@ input[type="file"] {
     display: none;
 }
 
+input{
+    margin-top: 0.5em;
+}
+
 .logo-upload {
     background: #272749;
     border-radius: 5px;
@@ -107,7 +119,7 @@ input[type="file"] {
     height: auto;
     line-height: normal;
     width: 18vw;
-    margin-top: 1em;
+    /* margin-top: 1em; */
     margin-right: 2em;
     padding: 0.85em .75em;
     border-radius: 5px;
@@ -124,7 +136,7 @@ input[type="file"] {
     line-height: normal;
     width: 15vw;
     height: 2.5vh;
-    margin-top: 1em;
+    margin-top: .5em;
     margin-right: 2em;
     padding: 0.925em .75em;
     border-radius: 5px;
@@ -139,19 +151,19 @@ input[type="file"] {
     padding: .65em 1.25em;
     position: relative;
     left: 5vw;
-    top: 0.25vh;
+    top: 0.4em;
 }
 .project-explain{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 0 1.1em 1.25em 1.5em;
+    /* margin: 0 1.1em 1em 0em; */
 }
-.project-explain input{
+.project-explain textarea{
     line-height: normal;
     text-align:start;
     vertical-align:sub;
-    margin-top: 1em;
+    margin-top: .5em;
     margin-right: 2em;
     padding: 0.85em .75em;
     border-radius: 5px;
@@ -160,7 +172,7 @@ input[type="file"] {
     color: #585858;
     font-size: 1.1em;
     height: 20vh;
-    width: 30vw;
+    width: 36.5vw;
 }
 .register-comment{
     color: rgba(205, 205, 205, 0.49);

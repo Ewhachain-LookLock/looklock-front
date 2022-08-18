@@ -19,10 +19,17 @@ const Register = () => {
   }
   
   const projectCategories = [
-    {label: "DeFi", value: 1},
-    {label: "NFT", value: 2},
-    {label: "Gaming", value: 3},
+    {value: "Pick a Category", id: null},
+    {value: "DeFi", id: 1},
+    {value: "NFT", id: 2},
+    {value: "Gaming", id: 3},
   ];
+
+  const [selectedCategory, setSelectedCategory] = useState('Pick a Category.');
+  const handleDropCategory = e => {
+    const { value } = e.target;
+    setSelectedCategory(projectCategories.filter(el => el.value === value)[0].id);
+  }
 
   return (
     <body>
@@ -33,32 +40,41 @@ const Register = () => {
         {/* 1. about project */}
         <div class='about-project-wrapper register-wrapper d-flex flex-column justify-content-center'>
           <h1>1. Tell about your project</h1>
-          <div class='project-info'>
-            <div class='register-project-name d-flex flex-wrap flex-column'>
-              <div class='register-txt'>
-                Project name
+          <div class='about-project'>
+            <div class='project-info'>
+              <div class='register-project-name d-flex flex-wrap flex-column'>
+                <div class='register-txt'>
+                  Project name
+                </div>
+                <input type="text" name="projectName" placeholder='Enter your project name' onChange={onChange} />
               </div>
-              <input type="text" name="projectName" placeholder='Enter your project name' onChange={onChange} />
+              <div class='project-logo d-flex flex-wrap flex-column'>
+                <div class='register-txt'>
+                  Project's logo image
+                </div>
+                <div class='logo-img d-flex flex-row'>
+                  {/* <input type="text" readonly="readonly" id="file_route"></input> */}
+                  <label class='logo-upload' for='logoImg'>Upload
+                  <input type="file" name="projectLogo" id='logoImg' accept='image/png, image/jpeg, image/jpg' onChange={onLoadFile}/>
+                  </label>
+                </div>
+              </div>
+            </div>     
+            <div class='project-category'>
+              <div class='register-txt'>Category</div>
+              <div class='register-dropdown-bar'>
+                <div class='dropdown-category' onChange={handleDropCategory}>
+                  {projectCategories.map(el => {
+                    return <option key={el.id}>{el.value}</option>;
+                  })}
+                </div>
+                {/* <Select options={projectCategories} /> */}
+              </div>
             </div>
-            <div class='project-logo d-flex flex-wrap flex-column'>
-              <div class='register-txt'>
-                Project's logo image
-              </div>
-              <div class='logo-img d-flex flex-row'>
-                {/* <input type="text" readonly="readonly" id="file_route"></input> */}
-                <label class='logo-upload' for='logoImg'>Upload
-                <input type="file" name="projectLogo" id='logoImg' accept='image/png, image/jpeg, image/jpg' onChange={onLoadFile}/>
-                </label>
-              </div>
+            <div class='project-explain'>
+              <div class='register-txt'>Project explanation</div>
+              <textarea name="projectExplanation" placeholder='Enter project detail explanation' onChange={onChange} />
             </div>
-          </div>     
-          <div class='project-category'>
-            <div class='register-txt'>Category</div>
-              {/* <Select options={projectCategories} /> */}
-          </div>
-          <div class='project-explain'>
-            <div class='register-txt'>Project explanation</div>
-            <input type="text" name="projectExplanation" placeholder='Enter project detail explanation' onChange={onChange} />
           </div>
         </div>
         {/* end of 1. about project */}
