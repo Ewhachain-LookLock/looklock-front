@@ -1,0 +1,124 @@
+
+#partner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 150px;
+    text-align: left;
+    /* border: 3px solid pink; */
+}
+
+/* TITLE SECTION */
+
+#partner-title {
+    font-weight: 800;
+    font-size: 60px;
+    color: #FFFFFF;
+}
+
+#partner-title-wrapper > p:nth-child(2) {
+    width: 80%;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 200%;
+    color: #FFFFFF;
+}
+
+#partner-title-wrapper > p:nth-child(3){
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    /* border: 3px solid blue; */
+}
+
+#partner-ex-ul {
+    /* border: 3px solid red; */
+    margin-top: 0;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+#go-to-register-btn {
+    display: flex;
+    align-items: center;
+    margin: 80px 0;
+    padding: 13px 35px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(to bottom right, #9D21FF, #2254D3);
+    font-weight: 600;
+    font-size: 22px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* GUIDELINE */
+
+#partner-guideline-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 40px;
+    background: #181825;
+    /* border: 3px solid #9D21FF; */
+}
+
+#partner-guideline-wrapper > h3 {
+    font-weight: 600;
+    font-size: 32px;
+    color: #CDCDCD;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#partner-guideline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* grid-template-columns: 200px 600px;
+    column-gap: 80px;  */
+    /* border: 3px solid #FFF; */
+}
+
+.partner-flex-item-left {
+    padding-top: 50px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #CDCDCD;
+    /* border: 3px solid yellow; */
+}
+
+.partner-flex-item-right {
+    margin-left: 20px;
+    /* border: 3px solid yellowgreen; */
+}
+
+#partner-benefit-cont {
+    width: 70%;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 167%;
+    color: #FFFFFF;
+}
+
+.partner-flex-item-cont {
+    width: 70%;
+    font-size: 15px;
+    line-height: 200%;
+}
+
+.requirement-ul {
+    margin-left: 20px;
+}
+
+.requirement-ul > li:nth-child(4),
+.requirement-ul > li:nth-child(5) {
+    margin-left: 40px;
+}

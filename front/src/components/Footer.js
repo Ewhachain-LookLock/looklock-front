@@ -31,14 +31,14 @@ const Footer = () => {
                             </li>
                         </ul>
                         <ul id="links-right">
-                            <li id='link-governance'>
-                                <Link to="/governance">Governance</Link>
+                            <li id='link-partner'>
+                                <Link to="/partner">Partner</Link>
                             </li>
                             <li>
                                 <Link to="/about">About us</Link>
                             </li>
                             <li>
-                                <Link to="/admin">Admin</Link>
+                                <Link to="/admin">Register</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,4 +1,4 @@
-import Footer from '../component/Footer';
+import Footer from '../components/Footer';
 import './Register.css';
 import React, { useState } from "react";
 import { Link } from "react-router-dom";

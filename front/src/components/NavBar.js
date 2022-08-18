@@ -73,11 +73,11 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork}) 
                         <Link to="/mystatus">MY STATUS</Link>
                     </li>
                     <li>
-                        <Link to="/governance">PARTNER</Link>
+                        <Link to="/partner">PARTNER</Link>
                     </li>
                     {( (!!user[0] && user[0].isAdmin)) ? (
                     <li>
-                        <Link to="/governance">ADMIN</Link>
+                        <Link to="/partner">ADMIN</Link>
                     </li>
                     ) : <></>
                     }

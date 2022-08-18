@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
-import NavBar from "./component/NavBar";
+import NavBar from "./components/NavBar";
 import Main from "./pages/Main";
 import NoPage from "./pages/NoPage";
 
@@ -11,7 +11,7 @@ import Project from './pages/Project';
 import Swap from './pages/Swap';
 import MyStatus from './pages/MyStatus';
 import ProjectDetail from './pages/ProjectDetail';
-import Governance from './pages/Governance';
+import Partner from './pages/Partner';
 import About from './pages/About';
 import Admin from './pages/Admin';
 import Register from './pages/Register';
@@ -129,7 +129,7 @@ export default function App() {
             <Route path="about" element={<About ></About>} />
             <Route path="admin" element={<Admin ></Admin>} />
             <Route path="mystatus" element={<MyStatus />} />
-            <Route path="governance" element={<Governance currentAccount = {currentAccount}/>} />
+            <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
             <Route path="*" element={<NoPage />} />
             {/* 디버깅용으로 register 페이지 임시 추가 */}
             <Route path="register" element={<Register></Register>} />

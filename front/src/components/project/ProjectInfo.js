@@ -2,8 +2,8 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import {useState, useEffect} from "react";
 import reducer from "../../utils/reducer";
-import Timer from '../../components/Timer';
-import BarGraph from '../../components/BarGraph';
+import Timer from '../Timer';
+import BarGraph from '../BarGraph';
 import { dateFormatter } from "../../utils/dateFromatter";
 
 export const ProjectInfo= (props) => {

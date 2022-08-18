@@ -1,4 +1,4 @@
-import Footer from "../component/Footer";
+import Footer from "../components/Footer";
 import './ProjectDetail.css';
 import Timer from '../components/Timer';
 import BarGraph from '../components/BarGraph'; 

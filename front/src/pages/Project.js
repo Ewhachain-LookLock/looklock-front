@@ -1,4 +1,4 @@
-import Footer from '../component/Footer';
+import Footer from '../components/Footer';
 import ProjectBox from '../components/ProjectBox';
 import './Project.css';
 import React, {useState, useEffect, useReducer} from 'react';
