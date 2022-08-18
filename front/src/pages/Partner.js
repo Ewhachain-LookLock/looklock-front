@@ -1,6 +1,8 @@
 import Footer from '../components/Footer';
 import Register from '../components/Register';
 import './Partner.css';
+import { Link } from "react-router-dom";
+
 
 const Partner = ({currentAccount}) => {
   return (
@@ -25,7 +27,9 @@ const Partner = ({currentAccount}) => {
             <li>Simplifying the lockdrop procedure</li>
             <li>Expose new projects to users interested in Lockdrop</li>
           </ul>
-          <button id='go-to-register-btn'>Go To Register</button>
+          <button id='go-to-register-btn'>
+            <Link to="/register">Go To Register</Link>
+          </button>
         </div>
         <div id='partner-guideline-wrapper'>
           <h3>Guideline</h3>

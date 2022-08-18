@@ -122,3 +122,7 @@
 .requirement-ul > li:nth-child(5) {
     margin-left: 40px;
 }
+
+.go-to-register-btn :link{
+    text-decoration: none;
+}
