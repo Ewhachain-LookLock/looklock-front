@@ -1,0 +1,11 @@
+
+#admin {
+    display: flex;
+    justify-content: center;
+}
+
+#admin-withdrawing {
+    margin: 0;
+    z-index: 1;
+    cursor: pointer;
+}

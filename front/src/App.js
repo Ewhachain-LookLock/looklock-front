@@ -19,7 +19,8 @@ import MyStatus from './pages/MyStatus';
 import ProjectDetail from './pages/ProjectDetail';
 import Partner from './pages/Partner';
 import About from './pages/About';
-import Admin from './pages/Admin';
+// import Admin from './pages/Admin';
+import Admin from './pages/Admintest';
 import Register from './pages/Register';
 import Memo from "./components/Memo";
 
@@ -215,13 +216,13 @@ export default function App() {
             <Route path='project/detail/:id' element={<ProjectDetail />} />
             
             <Route path="swap" element={<Swap />} />
-            <Route path="about" element={<About ></About>} />
-            <Route path="admin" element={<Admin ></Admin>} />
+            <Route path="about" element={<About />} />
+            <Route path="admin" element={<Admin />} />
             <Route path="mystatus" element={<MyStatus />} />
             <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
             <Route path="*" element={<NoPage />} />
             {/* 디버깅용으로 register 페이지 임시 추가 */}
-            <Route path="register" element={<Register></Register>} />
+            <Route path="register" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>
