@@ -68,8 +68,38 @@ import { ConstructorFragment } from 'ethers/lib/utils';
 
   const animatedComponents = makeAnimated();
 
+  // "title": "Look",
+  // "information": ":Information about project ~!~", 
+  // "rewards": [{"days": 30, "boost":1},{"days": 60, "boost":2},{"days": 90, "boost":3},{"days": 120, "boost":4} ] ,
+  // "startDate": "2022-07-01",
+  // "phase1period": 30,
+  // "phase2periods": [{"days": 30, "percent":30},{"days": 60, "percent":10} ] 
+
 const Register = () => {
+  const [projectInfo, setProjectInfo] = useState({
+    title : "",
+    tokenName : "",
+    information: "",
+    category : "",
+    startDate : null
+  })
+  const [image, setImage] = useState();
+  const [tokenContract, setTokenContract] = useState("");
+
+  const [rewards, setRewards] = useState({
+    period : 0,
+    multiplier : 0,
+    allocation : 0
+  })
+  const [phase2, setPhase2] = useState({
+    period : 0,
+    percent : 0
+  })
+
   const [inputs, setInputs] = useState('');
+  
+  const onProjectInfoChange = (e) => setProjectInfo(prevInfo => ({ ...prevInfo, [e.target.name]: e.target.value }) )
+  const onTokenContractChange = (e) => setTokenContract(e.target.value);
 
   const onChange = (e)=>{
     setInputs(e.target.value);
