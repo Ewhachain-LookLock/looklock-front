@@ -5,7 +5,7 @@ import './NavBar.css';
 import axios from "axios";
 import reducer from '../utils/reducer';
 
-const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork}) => {
+const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork, disconnectWeb3Modal}) => {
     let defaultUser = [{isAdmin:false}];
     const [state, dispatch] = useReducer(reducer, {
         loading: false,
@@ -14,7 +14,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork}) 
     });
 
     const fetchUser = async (currentAccount) => {
-        if (currentAccount === '') {
+        if (currentAccount === '' | currentAccount === undefined) {
             console.log("no account yet!");
             dispatch({type:'SUCCESS', data:defaultUser})
             return
@@ -94,7 +94,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork}) 
                 ) : 
                 (
                 <div class= "wallet">
-                    <button disabled class = "wallet-btn">{currentAccount}</button>
+                    <button class = "wallet-btn" onClick={disconnectWeb3Modal}>Disconnect Wallet</button>
                 </div>
                 )}
             </div>
