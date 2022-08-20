@@ -69,7 +69,7 @@ const Swap = () => {
                   </div>
                   {/* right */}
                   <div class='amount-input from-amount'>
-                    <input fromAmount="fromAmount" min='0' placeholder='0' onChange={onChange} value={amounts} type="number"/>
+                    <input id='eth-input-area' fromAmount="fromAmount" min='0' placeholder='0' onChange={onChange} value={amounts} type="number"/>
                   </div>
                 </div>
               </div>

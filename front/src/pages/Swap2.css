@@ -103,7 +103,8 @@
 .amount-input > input {
     font-weight: 500;
     font-size: 28px;
-    width: 97%;
+    width: 90%;
+    margin-bottom: 10px;
     text-align: right;
     background: #12122B;
     color: #5B5B5B;
