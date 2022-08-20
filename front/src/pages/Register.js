@@ -88,9 +88,10 @@ const Register = () => {
 
   const [rewards, setRewards] = useState([{
     period : 0,
-    multiplier : 0,
-    allocation : 0
-  }])
+    multiplier : 1,
+    allocation : 2
+  }
+])
   const [phase2, setPhase2] = useState([{
     period : 0,
     percent : 0
@@ -198,19 +199,58 @@ const Register = () => {
               <h3>Total token rewards for lockdrop</h3>
               <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
               <div class='token-rewards-table'>
-                1234
                 <table>
                 {rewards.map((data, index) => {
-                    // lockdrop periods
                     console.log(data.period);
                     return(
-                    <tr>
-                      <td>
-                        <input type="text" name="period" value={data.period}></input>
-                      </td>
-                      <td>1</td>
-                      <td>2</td>
-                    </tr> )
+                    // Lockdrop periods
+                    <tbody>
+                        {/* // Lockdrop periods */}
+                        <tr>
+                          <label>Lockdrop Periods</label>
+                          <td>
+                            <input type="text" name="period" value={data.period}></input> days
+                          </td>
+                          <td>
+                            <input type="text" name="period" value={data.period}></input> days
+                          </td>
+                          <td>
+                            <input type="text" name="period" value={data.period}></input> days
+                          </td>
+                        </tr>
+                        {/* Multipliers */}
+                        <tr>
+                          <label>Multipliers</label>
+                          <td>
+                            <input type="text" name="multiplier" value={data.multiplier}></input> 
+                            <label>X</label>
+                          </td>
+                          <td>
+                            <input type="text" name="multiplier" value={data.multiplier}></input>
+                            <label>X</label>
+
+                          </td>
+                          <td>
+                            <input type="text" name="multiplier" value={data.multiplier}></input> 
+                            <label>X</label>
+
+                          </td>
+                        </tr>
+                        {/* Token Allocation */}
+                        <tr>
+                          <label>Token Allocation</label>
+                          <td>
+                            <input type="text" name="allocation" value={data.allocation}></input>
+                          </td>
+                          <td>
+                            <input type="text" name="allocation" value={data.allocation}></input>
+                          </td>
+                          <td>
+                            <input type="text" name="allocation" value={data.allocation}></input>
+                          </td>
+                        </tr>
+                      </tbody> 
+                    )
                 })}
                 </table>
         

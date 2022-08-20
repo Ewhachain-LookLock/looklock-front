@@ -213,6 +213,46 @@ input{
     font-weight: bold;
 }
 
+table{
+    display: flex;
+    margin-top: 2em;
+    /* background: #14141F;
+    border: 1px solid #31314D; */
+}
+tr {
+    display: flex;
+    flex-direction: row;
+}
+tr > label {
+    color: #CDCDCD;
+    display: flex;
+    align-items: center;
+    width: 5vw;
+}
+td{
+    background: #14141F;
+    border: 1px solid #31314D;
+    display: flex;
+    align-items: center;
+    width: 8vw;
+    /* position: absolute; */
+    /* width: 108px;
+    height: 52px; */
+}
+
+td > input {
+    /* width: 2vw; */
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    width: 3vw;
+    padding-left: 1em;
+    border: none;
+}
+
+td > label {
+}
+
 /* table{
     display:flex;
     display: -webkit-box;
