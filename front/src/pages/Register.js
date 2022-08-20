@@ -34,6 +34,23 @@ const Register = () => {
     setSelectedCategory(projectCategories.filter(el => el.value === value)[0].id);
   }
 
+  const rows = useMemo(
+    () => [
+      {
+        accessor: "duration",
+        Header: "Duration",
+      },
+      {
+        accessor: "multiplier",
+        Header: "Multiplier",
+      },
+      {
+        accessor: "allocation",
+        Header: "Allocation",
+      },
+    ],
+    []
+  );
   return (
     <body>
       <div class='register-container d-flex flex-column'>
