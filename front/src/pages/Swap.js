@@ -81,7 +81,7 @@ const Swap = () => {
                 <div class='swap-token'>
                   <div class='to-token'>
                     <span>
-                      <img id="swap-to-lolo" src={require('../Assets/logo/lolo-logo.png')} alt="to-token-img" class='swap-token-img'/>
+                      <img id="swap-to-lolo" src={require('../Assets/logo/lolo-logo-white.png')} alt="to-token-img" class='swap-token-img'/>
                     </span>
                     <span class='to-token-name'>LOLO</span>
                     <span class="arrow-down"></span>
