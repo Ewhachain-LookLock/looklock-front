@@ -1,16 +1,16 @@
 import Footer from '../components/Footer';
 import './Register.css';
-import React, { useState, useMemo, setState } from "react";
+import React, { useState, useMemo, setState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Select, { default as ReactSelect, components } from 'react-select';
-import Table from '../components/Table.js';
-import SelectCategory from '../components/SelectCategory';
+// import Table from '../components/Table.js';
+import SelectCategory from '../components/Register/SelectCategory';
 import makeAnimated from "react-select/animated";
 import { ConstructorFragment } from 'ethers/lib/utils';
 
   // project category
   const projectCategories = [
-    {value: "default", label: "Pick a Category", id: null},
+    {value:"default", label: "Pick a Category", id: null},
     {value:"defi", label: "DeFi", id: 1},
     {value:"nft", label: "NFT", id: 2},
     {value:"tooling", label: "Tooling", id: 3},
@@ -86,20 +86,29 @@ const Register = () => {
   const [image, setImage] = useState();
   const [tokenContract, setTokenContract] = useState("");
 
-  const [rewards, setRewards] = useState({
+  const [rewards, setRewards] = useState([{
     period : 0,
     multiplier : 0,
     allocation : 0
-  })
-  const [phase2, setPhase2] = useState({
+  }])
+  const [phase2, setPhase2] = useState([{
     period : 0,
     percent : 0
-  })
+  }])
 
   const [inputs, setInputs] = useState('');
-  
+
+  useEffect(()=> {
+    console.log("rewards: " ,rewards[0].period);
+  }, [])
   const onProjectInfoChange = (e) => setProjectInfo(prevInfo => ({ ...prevInfo, [e.target.name]: e.target.value }) )
   const onTokenContractChange = (e) => setTokenContract(e.target.value);
+
+  // project category multiselect
+  const handleChange = selected => {
+    setOptionSelected('selected');
+  };
+  const [optionSelected, setOptionSelected] = useState('');
 
   const onChange = (e)=>{
     setInputs(e.target.value);
@@ -111,42 +120,6 @@ const Register = () => {
     console.log(file);
     setFiles(file);
   }
-
-  // project category multiselect
-  const [optionSelected, setOptionSelected] = useState('');
-  const handleChange = selected => {
-    setOptionSelected('selected');
-  };
-  // token rewards table
-  const rows = useMemo(
-    () => [
-      {
-        accessor: "duration",
-        Header: "Duration",
-      },
-      {
-        accessor: "multiplier",
-        Header: "Multiplier",
-      },
-      {
-        accessor: "allocation",
-        Header: "Allocation",
-      },
-    ],
-    []
-  );
-
-  const tableData = useMemo(
-    () => 
-      Array(53)
-        .fill()
-        .map(() => ({
-          duration: 0,
-          multiplier: 0,
-          allocation: 0,
-        })),
-    []
-  );
 
   return (
     <body>
@@ -225,8 +198,27 @@ const Register = () => {
               <h3>Total token rewards for lockdrop</h3>
               <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
               <div class='token-rewards-table'>
+                1234
+                <table>
+                {rewards.map((data, index) => {
+                    // lockdrop periods
+                    console.log(data.period);
+                    return(
+                    <tr>
+                      <td>
+                        <input type="text" name="period" value={data.period}></input>
+                      </td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr> )
+                })}
+                </table>
+        
+                
+                
                 {/* <Table rows={rows} data={tableData} /> */}
-                <div class='register-comment add-table add-more'>add more..</div>   
+                <div class='register-comment add-table add-more'>add more..</div> 
+                {/* add more하면 onClick으로 세트 하나 더 생성 (...기존, new)   */}
               </div>
             </div>
           </div>
