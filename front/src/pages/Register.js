@@ -1,6 +1,6 @@
 import Footer from '../components/Footer';
 import './Register.css';
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
 
@@ -22,7 +22,10 @@ const Register = () => {
     {value: "Pick a Category", id: null},
     {value: "DeFi", id: 1},
     {value: "NFT", id: 2},
-    {value: "Gaming", id: 3},
+    {value: "Tooling", id: 3},
+    {value: "Infrastructure", id: 4},
+    {value: "Gaming", id: 5},
+    {value: "Public Goods", id: 6},
   ];
 
   const [selectedCategory, setSelectedCategory] = useState('Pick a Category.');
