@@ -1,8 +1,72 @@
 import Footer from '../components/Footer';
 import './Register.css';
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, setState } from "react";
 import { Link } from "react-router-dom";
-import Select from 'react-select';
+import Select, { default as ReactSelect, components } from 'react-select';
+import Table from '../components/Table.js';
+import SelectCategory from '../components/SelectCategory';
+import makeAnimated from "react-select/animated";
+import { ConstructorFragment } from 'ethers/lib/utils';
+
+  // project category
+  const projectCategories = [
+    {value: "default", label: "Pick a Category", id: null},
+    {value:"defi", label: "DeFi", id: 1},
+    {value:"nft", label: "NFT", id: 2},
+    {value:"tooling", label: "Tooling", id: 3},
+    {value:"infrastructure", label: "Infrastructure", id: 4},
+    {value:"gaming", label: "Gaming", id: 5},
+    {value:"public-goods", label: "Public Goods", id: 6},
+  ];
+
+  const Option = (props) => {
+    const [isSelected, setIsSelected] = useState('');
+    return (
+      <div>
+        <components.Option {...props}>
+          <input
+            type="checkbox"
+            checked={isSelected}
+            onChange={() => null}
+          />{" "}
+          <label>{projectCategories.label}</label>
+        </components.Option>
+      </div>
+    );
+  };
+  
+  const allOption = {
+    label: "Select all",
+    value: "*"
+  };
+  
+  const ValueContainer = ({ children, ...props }) => {
+    const currentValues = props.getValue();
+    let toBeRendered = children;
+    if (currentValues.some(val => val.value === allOption.value)) {
+      toBeRendered = [[children[0][0]], children[1]];
+    }
+  
+    return (
+      <components.ValueContainer {...props}>
+        {toBeRendered}
+      </components.ValueContainer>
+    );
+  };
+  
+  const MultiValue = props => {
+    let labelToBeDisplayed = `${props.data.label}, `;
+    if (props.data.value === allOption.value) {
+      labelToBeDisplayed = "All is selected";
+    }
+    return (
+      <components.MultiValue {...props}>
+        <span>{labelToBeDisplayed}</span>
+      </components.MultiValue>
+    );
+  };
+
+  const animatedComponents = makeAnimated();
 
 const Register = () => {
   const [inputs, setInputs] = useState('');
@@ -17,23 +81,13 @@ const Register = () => {
     console.log(file);
     setFiles(file);
   }
-  
-  const projectCategories = [
-    {value: "Pick a Category", id: null},
-    {value: "DeFi", id: 1},
-    {value: "NFT", id: 2},
-    {value: "Tooling", id: 3},
-    {value: "Infrastructure", id: 4},
-    {value: "Gaming", id: 5},
-    {value: "Public Goods", id: 6},
-  ];
 
-  const [selectedCategory, setSelectedCategory] = useState('Pick a Category.');
-  const handleDropCategory = e => {
-    const { value } = e.target;
-    setSelectedCategory(projectCategories.filter(el => el.value === value)[0].id);
-  }
-
+  // project category multiselect
+  const [optionSelected, setOptionSelected] = useState('');
+  const handleChange = selected => {
+    setOptionSelected('selected');
+  };
+  // token rewards table
   const rows = useMemo(
     () => [
       {
@@ -51,6 +105,19 @@ const Register = () => {
     ],
     []
   );
+
+  const tableData = useMemo(
+    () => 
+      Array(53)
+        .fill()
+        .map(() => ({
+          duration: 0,
+          multiplier: 0,
+          allocation: 0,
+        })),
+    []
+  );
+
   return (
     <body>
       <div class='register-container d-flex flex-column'>
@@ -83,11 +150,23 @@ const Register = () => {
             <div class='project-category'>
               <div class='register-txt'>Category</div>
               <div class='register-dropdown-bar'>
-                <div class='dropdown-category' onChange={handleDropCategory}>
-                  {projectCategories.map(el => {
-                    return <option key={el.id}>{el.value}</option>;
-                  })}
-                </div>
+                <span class='dropdown-category' data-toggle='pop-over' data-trigger="focus" data-content="Please select category(s)">
+                  <SelectCategory
+                    options={projectCategories}
+                    isMulti
+                    closeMenuOnSelect={false}
+                    hideSelectedOptions={false}
+                    components={{
+                      Option,
+                      MultiValue,
+                      ValueContainer,
+                      animatedComponents
+                    }}
+                    onChange={handleChange}
+                    allowSelectAll={true}
+                    value={optionSelected}
+                  />
+                </span>
                 {/* <Select options={projectCategories} /> */}
               </div>
             </div>
@@ -115,7 +194,8 @@ const Register = () => {
             <div class='total-token-rewards detail-wrapper'>
               <h3>Total token rewards for lockdrop</h3>
               <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
-              <div class='token-rewards-table'>표
+              <div class='token-rewards-table'>
+                {/* <Table rows={rows} data={tableData} /> */}
                 <div class='register-comment add-table add-more'>add more..</div>   
               </div>
             </div>
