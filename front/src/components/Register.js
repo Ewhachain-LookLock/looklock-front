@@ -10,7 +10,7 @@ export default function Register() {
   const [imageObj, setImageObj] = useState();
 
   const [state, dispatch] = useReducer(reducer, {
-    loading :false,
+    loading : false,
     data : null,
     error : null
   });
