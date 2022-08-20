@@ -61,13 +61,13 @@ const Footer = () => {
                                 Contact us:
                             </li>
                             <li>
-                                트위터
+                                Twitter
                             </li>
                             <li>
-                                디스코드
+                                Discord
                             </li>
                             <li>
-                                텔레그램
+                                Telegram
                             </li>
                         </ul>
                     </div>

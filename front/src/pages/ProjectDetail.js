@@ -23,6 +23,11 @@ const ProjectDetail = () => {
         error: null
     });
 
+    const handleProgressBar = () => {
+        var size = '50%';
+        document.documentElement.style.setProperty('--barSize', size);
+    }
+
     const fetchProject = async () => {
         dispatch({type : 'LOADING'});
         try {
@@ -136,6 +141,7 @@ const ProjectDetail = () => {
         <div>
             <div id='project-detail-wrapper'>
                 <div id='zelo-wrapper'>
+                    {/* project description section */}
                     <div id='project-name'>
                         <div>
                             {/* 이미지는 나중에 */}
@@ -144,7 +150,7 @@ const ProjectDetail = () => {
                         <h1>{project[0].title}</h1>
                         <div>
                             <button id='phase1-btn'>{currentPhase}</button>
-                            {/* <div id='phase1-btn-blur'></div> */}
+                            <div id='phase1-btn-blur'></div>
                         </div>
                     </div>
                     <div id='period-box'>
@@ -193,9 +199,8 @@ const ProjectDetail = () => {
                                     <span class='part-day'>30</span>
                                     <span>days</span>  
                                 </div>
-                                <div class='progress-bar'>
-                                    
-                                </div>
+                                <div class='progress-bar'></div>
+                                <div class='purple-bar'></div>
                                 <div class='inner-footer'>
                                     <span>700,000/100,000,000</span>
                                     <span>70%</span>
@@ -209,6 +214,7 @@ const ProjectDetail = () => {
                                 <div class='progress-bar'>
                                     
                                 </div>
+                                <div class='purple-bar'></div>
                                 <div class='inner-footer'>
                                     <span>700,000/100,000,000</span>
                                     <span>70%</span>
@@ -224,6 +230,7 @@ const ProjectDetail = () => {
                                 <div class='progress-bar'>
                                     
                                 </div>
+                                <div class='purple-bar'></div>
                                 <div class='inner-footer'>
                                     <span>700,000/100,000,000</span>
                                     <span>70%</span>
@@ -237,6 +244,7 @@ const ProjectDetail = () => {
                                 <div class='progress-bar'>
                                    
                                 </div>
+                                <div class='purple-bar'></div>
                                 <div class='inner-footer'>
                                     <span>700,000/100,000,000</span>
                                     <span>70%</span>
@@ -292,7 +300,7 @@ const ProjectDetail = () => {
                                         <span>MAX</span>
                                     </div>
                                 </div>
-                                <span>Minimum Amount 000</span>
+                                <span class='hidden-txt'>Minimum Amount 000</span>
                             </div>
                             <div id='duration-container'>
                                 <span>Duration (days)</span>
@@ -308,7 +316,7 @@ const ProjectDetail = () => {
                                     <span>Est Lockdrop Rewards</span>
                                     <div>
                                         <span id='est-usd'>150</span>
-                                        <span>USD</span>
+                                        <span>ZELO</span>
                                     </div>
                                 </div>
                                 <div class='flex'>

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import Footer from '../components/Footer';
-import './About.css';
+// import './About.css';
 
 
 const About = ({ accounts, setAccounts }) => {

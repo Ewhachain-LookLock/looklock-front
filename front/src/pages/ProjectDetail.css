@@ -1,6 +1,13 @@
+
+:root {
+    --barSize: 70%; 
+}
+
 #project-detail-wrapper {
     width: 80%;
+    min-width: 900px;
     display: flex;
+    justify-content: center;
     margin: 0 auto;
     /* border: 3px solid yellow; */
 }
@@ -52,6 +59,7 @@
     margin-top: 0px;
     background: #32CAEC;
     border-radius: 10px;
+    border: none;
     font-weight: 600;
     font-size: 14px;
     align-items: center;
@@ -74,6 +82,11 @@
 
 #period-left > ul > li:first-child {
     height: 45px;
+}
+
+#period-phase1,
+#period-phase2 {
+    min-width: 310px;
 }
 
 #period-phase1 > span:first-child,
@@ -139,6 +152,7 @@
 .outer-box {
     display: flex;
     justify-content: space-around;
+    max-width: 800px;
 }
 
 .inner-box {
@@ -173,6 +187,16 @@
     border-radius: 28px;    
 }
 
+.purple-bar {
+    /* width: 70%; */
+    width: var(--barSize);
+    height: 10px;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    background: linear-gradient(102.13deg, #9D21FF -18.49%, #2254D3 131.68%);
+    border-radius: 28px;  
+}
+
 .inner-footer {
     display: flex;
     justify-content: space-between;
@@ -189,6 +213,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    max-width: 800px;
     border: 1px solid transparent;
     border-radius: 20px;
     background-image: linear-gradient(black, black), 
@@ -255,6 +280,8 @@
 }
 
 #lockup-container {
+    min-width: 600px;
+    max-width: 700px;
     margin: 30px;
     padding-top: 30px;
     border: 1px solid #6B6B6B;
@@ -315,28 +342,29 @@
     padding: 0 30px;
     background: #12122A;
     border-radius: 10px;
-    /* border: 1px solid white; */
     margin: 10px 0;
 }
+
+#amount-input-area {
+    display: flex;
+    width: 80px;
+    margin: 10px;
+    padding: 10px;
+    background: #12122A;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: right;
+    color: #FFFFFF;
+}
+
 
 .flex-right {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-
-#amount-input-area {
-    background: #12122A;
-    border-radius: 10px;
-    border: none;
-    width: 80px;
-    /* margin-left: 100px; */
-    padding: 10px;
-    font-weight: 500;
-    font-size: 30px;
-    display: flex;
-    color: #FFFFFF;
 }
 
 /* Duration */
@@ -401,14 +429,15 @@
 /* Button */
 
 #lockup-btn {
-    margin: 30px 50px;
-    padding: 13px 100px;
+    width: 90%;
+    margin: 30px;
+    padding: 30px 100px;
     border-radius: 10px;
     border: none;
     color: #FFF;
     background: linear-gradient(to bottom right, #9D21FF, #2254D3);
-    font-size: 16px;
     font-weight: 600;
+    font-size: 20px;
     cursor: pointer;
 }
 

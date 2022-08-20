@@ -77,7 +77,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork, d
                     </li>
                     {( (!!user[0] && user[0].isAdmin)) ? (
                     <li>
-                        <Link to="/partner">ADMIN</Link>
+                        <Link to="/admin">ADMIN</Link>
                     </li>
                     ) : <></>
                     }

@@ -17,7 +17,7 @@ const Table = ({ rows, data }) => {
                 <thead>
                     {headerGroups.map((headerGroup) => (
                         <td {...headerGroup.getHeaderGroupProps()}>
-                            {headerGruop.headers.map((row) => (
+                            {headerGroup.headers.map((row) => (
                                 <th {...row.getHeaderProps(row.getSortByToggleProps())}>
                                     {row.render("Header")}
                                 </th>

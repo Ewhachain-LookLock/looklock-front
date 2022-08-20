@@ -43,9 +43,9 @@ const Project = () => {
   return (
     <body>
       <div id='project-wrapper'>
-        <h1 id='project-h1'>Project</h1>
         <div class="project-container">
           <div class="project-header">
+          <h1 id='project-h1'>Projects</h1>
             <ul>
               <li class='grid-item'>
                 #

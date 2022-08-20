@@ -130,7 +130,7 @@ input{
     margin: 1em 0 0;
 }
 
-.register-project-name input{
+.register-project-name input, .register-dropdown-bar{
     height: auto;
     line-height: normal;
     width: 18vw;
@@ -190,7 +190,7 @@ input{
     width: 36.5vw;
 }
 
-.token-address > input{
+.token-address > input, .register-dropdown-bar {
     width: 36.5vw;
 }
 .register-comment{
