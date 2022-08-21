@@ -25,6 +25,7 @@ import Admin from './pages/Admintest';
 import Register from './pages/Register';
 import Memo from "./components/Memo";
 
+import ScrollToTop from "./components/ScrollToTop";
 
 configureLogger({ logLevel: 'DEBUG' })
 
@@ -161,6 +162,7 @@ export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={
               <NavBar 

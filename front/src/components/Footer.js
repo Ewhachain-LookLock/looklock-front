@@ -56,7 +56,7 @@ const Footer = () => {
                         © LOOKLOCK. 2022. 
                     </div>
                 </div>
-                <div class='right-box'>
+                <div class='bottom-right-box'>
                     {/* Right Side */}
                     <div>
                         <ul id='contact-links'>
