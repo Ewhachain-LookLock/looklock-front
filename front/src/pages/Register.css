@@ -118,7 +118,7 @@ input{
     color: white;
 
 }
-.detail-wrapper > h3{
+.detail-wrapper > h3, .apply-period > h3{
     font-size: 1.25rem;
     text-align: left;
     margin: 5vh 0 0;
@@ -223,12 +223,20 @@ tr {
     display: flex;
     flex-direction: row;
 }
-tr > label {
+thead {
     color: #CDCDCD;
     display: flex;
-    align-items: center;
-    width: 5vw;
 }
+.token-rewards-thead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 5vw; */
+    text-align: left;
+
+}
+
+
 td{
     background: #14141F;
     border: 1px solid #31314D;
@@ -243,14 +251,19 @@ td{
 td > input {
     /* width: 2vw; */
     margin-top: 0;
+    margin-right: 0;
     display: flex;
     align-items: center;
-    width: 3vw;
+    width: 2.5vw;
     padding-left: 1em;
     border: none;
 }
 
 td > label {
+    display: flex;
+    width: 1.5em;
+    text-align: end;
+
 }
 
 /* table{
@@ -259,4 +272,32 @@ td > label {
     display: -ms-flexbox;
     overflow-x: auto;
     overflow-y: hidden;
-    } */
+} */
+
+.project-start-date > input  {
+    color: white;
+}
+
+.withdraw-detail-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-container{
+    display: flex;
+    flex-direction: row;
+}
+.
+.withdraw-period{
+    width: 8vw;
+    margin-right: 6em;
+}
+
+.withdraw-percent{
+    width: 8vw;
+}
+
+.add-phase2 {
+    display: flex;
+    flex-direction: row;
+}
