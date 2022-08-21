@@ -23,6 +23,7 @@ const user = {
             console.log("result: ", result);
             res.status(200).send(result);
         }catch(err) {
+            console.log(err.message);
             res.status(500).send(err);
         }
     },
