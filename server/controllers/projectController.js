@@ -63,8 +63,12 @@ const project = {
                 },
                 
                 title : data.title,
+                tokenName : data.tokenName,
+                owner : data.owner,
+                phase2period : data.phase2period,
                 information : data.information,
                 rewards : data.rewards,
+
                 startDate : data.startDate,
                 phase1period : data.phase1period,
                 phase2periods : data.phase2periods

@@ -180,7 +180,7 @@ export default function App() {
             <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
             <Route path="*" element={<NoPage />} />
             {/* 디버깅용으로 register 페이지 임시 추가 */}
-            <Route path="register" element={<Register />} />
+            <Route path="register" element={<Register currentAccount={currentAccount}/>} />
           </Route>
         </Routes>
       </BrowserRouter>

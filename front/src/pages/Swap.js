@@ -8,7 +8,7 @@ import Modal from '../pages/Modal';
 
 
 const Swap = () => {
-  const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  const contractAddress = "0xaFF9247f8FBAD77B088a032c5Ce08987db9C0ebD"
   const [amounts, setAmmounts] = useState('');
   // const [modalOpen, setModalOpen] = useState(false);
   // Modal control
