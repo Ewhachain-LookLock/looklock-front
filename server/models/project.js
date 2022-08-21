@@ -5,11 +5,14 @@ const projectSchema = new mongoose.Schema({
         data:Buffer,
         contentType:String
     },
+    owner : {type: String, required:true},
     title: {type: String, required:true},
+    category: {type:String, required:true},
     information: {type:String, required:true}, 
     rewards: [{type: Map, of:Number}],
     startDate: {type: Date, default : null},
     phase1period: {type:Number, required:true},
+    phase2period:{type:Number, required:true},
     phase2periods: [{type: Map, of : Number}]  
 },
 {
@@ -30,6 +33,16 @@ projectSchema.statics.findAll = function() {
 projectSchema.statics.findByTitle = function(title) {
     try {
         const result = this.find({title: title});
+        console.log(result);
+        return result;
+    } catch(err) {
+        throw err;
+    }
+};
+
+projectSchema.statics.findByOwner = function(owner) {
+    try {
+        const result = this.find({owner: owner});
         console.log(result);
         return result;
     } catch(err) {

@@ -87,7 +87,7 @@ export default function App() {
 
   const disconnectWeb3Modal = async () => {
     web3Modal.clearCachedProvider();
-    console.log("clicked")
+
     if (provider && (provider).sequence) {
       const wallet = (provider).sequence;
       wallet.disconnect()
@@ -117,60 +117,16 @@ export default function App() {
     setCurrentAccount(account);
   }
 
-
-  // const checkIfWalletIsConnected = async () => {
-  //     const {ethereum} = window;
-  //     if (ethereum) {
-  //         console.log('Got the ethereum object: ', ethereum);
-  //     }else {
-  //         console.log('No Wallet found. Connect Wallet');
-  //     }
-
-  //     const accounts = await ethereum.request({method: "eth_accounts"});
-
-  //     if (accounts.length !== 0) {
-  //         console.log('Found authorized Account: ', accounts[0]);
-  //         setCurrentAccount(accounts[0]);
-  //     }else {
-  //         console.log('No authorized account found');
-  //     }
-  // };
-
-  // const connectWallet = async () => {
-  //     try {
-  //       const {ethereum} = window;
-  
-  //       if(!ethereum) {
-  //         console.log('Metamask not detected');
-  //         return;
-  //       }
-  //       let chainId = await ethereum.request({method:'eth_chainId'})
-        
-  //       const address = await ethereum.enable();
-  //       await console.log('address : ', address);
-        
-  //       const hardhatChainId = '0x539'
-  //       if (chainId !== hardhatChainId) {
-  //         alert('You are not connected to the Hardhat Testnet!');
-  //         return;
-  //       }
-      
-  //       console.log('Found account', address[0]);
-  //       setCurrentAccount(address[0]);
-  //     } catch(error) {
-  //       console.log('Error connecting to metamask', error)
-  //     }
-  // }
-
   const changeNetwork = async() => {
       const localhost = '0x539'
       const rinkeby = '0x4'
-      const polygon = '0x89'
-      if (![localhost, rinkeby, polygon].includes(window.ethereum.networkVersion)) {
+      const polygonMainnet = '0x89'
+      const mumbai = '0x13881'
+      if (window.ethereum.networkVersion !== mumbai) {
           try {
             await window.ethereum.request({
               method: 'wallet_switchEthereumChain',
-              params: [{ chainId: localhost }]
+              params: [{ chainId: mumbai }]
             });
           } catch (err) {
               // This error code indicates that the chain has not been added to MetaMask
@@ -179,9 +135,9 @@ export default function App() {
                 method: 'wallet_addEthereumChain',
                 params: [
                   {
-                    chainName: 'Localhost',
-                    chainId: localhost,
-                    rpcUrls: ['http://localhost:8545/']
+                    chainName: 'Mumbai',
+                    chainId: mumbai,
+                    rpcUrls: ['https://rpc-mumbai.maticvigil.com/']
                   }
                 ]
               });
@@ -193,8 +149,9 @@ export default function App() {
     const checkCorrectNetwork = async () => {
         const chainId = await getChainID();
         const hardhatChainId = 1337
+        const mumbaiChainId = 80001
     
-        if (chainId !== hardhatChainId) {
+        if (chainId !== mumbaiChainId) {
           setCorrectNetwork(false)
         }else {
           setCorrectNetwork(true)

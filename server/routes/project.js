@@ -15,7 +15,8 @@ const storage = multer.diskStorage({
   
 const upload = multer({ storage: storage });
 
-router.get('/:title', projectController.read);
+router.get('/:title', projectController.readByTitle);
+router.get('/:owner', projectController.readByOwner);
 router.post('/', upload.single('projectImg'), projectController.write);
 router.get('/', projectController.readAll);
 
