@@ -280,3 +280,22 @@ img {
     font-size: 60px;
     color: #FFFFFF;    
 }
+
+/* animation */
+.fadein{
+    position: relative;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
