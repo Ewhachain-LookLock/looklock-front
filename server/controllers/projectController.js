@@ -15,6 +15,7 @@ const project = {
                 });
             res.send(projects);
         }catch (err) {
+            console.log(err.message);
             res.status(500).send(err);
         }
     },
@@ -29,7 +30,8 @@ const project = {
                 });
             res.send(proj);
         } catch (err) {
-            res.status(500).send(err)
+            console.log(err.message);
+            res.status(500).send(err);
         }
     },
 
@@ -43,6 +45,7 @@ const project = {
                 });
             res.send(proj);
         } catch (err) {
+            console.log(err.message);
             res.status(500).send(err)
         }
     },
@@ -80,6 +83,7 @@ const project = {
             console.log("result: ", result),
             res.status(200).send(result);
         }catch(err) {
+            console.log(err.message);
             res.status(500).send(err);
         }
     }
