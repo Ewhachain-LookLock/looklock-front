@@ -24,6 +24,7 @@ import Admin from './pages/Admintest';
 import Register from './pages/Register';
 import Memo from "./components/Memo";
 
+
 configureLogger({ logLevel: 'DEBUG' })
 
 let providerOptions = {
