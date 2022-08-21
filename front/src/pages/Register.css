@@ -69,7 +69,6 @@ input:focus, textarea:focus{
     flex-direction: column;
     align-items: flex-start;
     margin: 0 0 1em 0em;
-
 }
 
 .register-project-name, .token-name, .token-address{
@@ -131,7 +130,9 @@ input{
     margin: 1em 0 0;
 }
 
-.register-project-name input, .register-dropdown-bar{
+.register-project-name input, .register-dropdown-bar {
+    display: flex;
+    align-items: center;
     height: auto;
     line-height: normal;
     width: 18vw;
@@ -147,27 +148,43 @@ input{
     height: 2.5vh;
 }
 
+.dropdown-category {
+    min-width: 36vw;
+}
+
 .logo-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
     height: auto;
     line-height: normal;
     width: 15vw;
+    /* min-width: 210px; */
     height: 2.5vh;
+    height: 30px;
     margin-top: .5em;
     margin-right: 2em;
-    padding: 0.925em .75em;
+    padding: 10px;
+    /* padding: 0.925em .75em; */
     border-radius: 5px;
     background: #14141F;
     border: 1px solid #31314D;
     color: #585858;
 }
 
-.logo-img label{
+.logo-img > label {
+    display: flex;
+    align-items: center;
     background: #272749;
     border-radius: 5px;
-    padding: .65em 1.25em;
+    /* padding: .65em 1.25em; */
+    padding: 22px;
     position: relative;
-    left: 5vw;
-    top: 0.4em;
+    margin-top: -7px;
+    margin-right: -7px;
+    /* left: 5vw; */
+    /* top: 0.4em; */
+    cursor: pointer;
 }
 .project-explain{
     display: flex;
@@ -198,11 +215,17 @@ input{
     color: rgba(205, 205, 205, 0.49);
 }
 .add-more{
-    /* identical to box height */
     text-decoration-line: underline;
-    /* 6b6b */
     color: #6B6B6B;
+}
 
+.addmore {
+    text-decoration-line: underline;
+
+    background: none;
+    color: #6B6B6B;
+    cursor: pointer;
+    border: none;
 }
 .phase1-txt{
     color: #32CAEC;
@@ -231,10 +254,16 @@ thead {
 .token-rewards-thead {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     /* width: 5vw; */
     text-align: left;
+}
 
+.token-rewards-thead > thead {
+    min-width: 200px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-right: 15px;
 }
 
 
@@ -275,13 +304,71 @@ td > label {
     overflow-y: hidden;
 } */
 
+.lockdrop-details {
+}
+
+.project-start-date {
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.phase1-period {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+}
+
+.phase2-period {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* border: 1px solid red;     */
+}
+
+.phase1-info {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.phase1-info:hover {
+    color: yellow;
+}
+
+.phase2-info {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.phase2-info:hover {
+    color: yellow;
+}
+
 .project-start-date > input  {
     color: white;
 }
 
+.withdraw-detail-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.withdraw-detail-form > table {
+    display: flex;
+    flex-direction: column;
+}
+
 .withdraw-detail-container {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.withdraw-period-detail {
+    display: flex;
+    align-items: center;
+    width: max-content;
 }
 
 .detail-container{
@@ -290,15 +377,27 @@ td > label {
 }
 
 .withdraw-period{
-    width: 8vw;
+    /* width: 8vw; */
+    width: max-content;
     margin-right: 6em;
 }
 
 .withdraw-percent{
-    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+.withdraw-percent-detail {
+    display: flex;
+    align-items: center;
 }
 
 .add-phase2 {
     display: flex;
     flex-direction: row;
+}
+
+.lockdrop-period-wrapper {
+    min-height: 600px;
 }

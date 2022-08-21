@@ -266,7 +266,7 @@ const Register = ({currentAccount}) => {
                   })}
                   </table>
                   <div class='register-comment add-table add-more'>
-                    <button type="button" onClick={() => setRewards([...rewards, {
+                    <button class='addmore' type="button" onClick={() => setRewards([...rewards, {
                     period : 0,
                     multiplier : 1,
                     allocation : 2
@@ -294,19 +294,20 @@ const Register = ({currentAccount}) => {
                 <div class='register-txt'>
                   <span class='phase1-txt'>Phase 1 </span> total period (Days)
                 </div>
+                <div class='phase1-info'>
+                  [?]
+                </div>
                 <div class='period-form'>
                   <input type="number" name="phase1Period" onChange={onPhase1PeriodChange} /> days
                 </div>
-                <div class='phase1-info'>
-                  물음표 + 마우스 오버 효과
-                </div>
+                
               </div>
               <div class='phase2-period d-inline-flex'>
                 <div class='register-txt'>
                   <span class='phase2-txt'>Phase 2 </span> total period (Days)
                 </div>
                 <div class='phase2-info'>
-                  물음표 + 마우스 오버 효과
+                  [?]
                 </div>
                 <div class='period-form'>
                   <input type="number" name="phase2Period" onChange={onPhase2PeriodChange} /> days
@@ -343,7 +344,7 @@ const Register = ({currentAccount}) => {
                   </table>
                   {/* <Table rows={rows} data={tableData} /> */}
                   <div class='register-comment add-table add-phase2 add-more'>
-                    <button type="button" onClick={() => setPhase2([...phase2, {
+                    <button class='addmore' type="button" onClick={() => setPhase2([...phase2, {
                     period : 0,
                     percent : 0
                     }])}>
@@ -352,12 +353,12 @@ const Register = ({currentAccount}) => {
                   </div>
               </div>
             </div>
-          </div>
           {/* end of 3. about lockdrop period */}
           <div class='lockdrop-register'>
             <button class="purple-gradient-btn" type="submit" id="register-btn">
               Register
             </button>
+          </div>
           </div>
         </div>
       </form>
