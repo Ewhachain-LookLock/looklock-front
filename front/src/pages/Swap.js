@@ -4,7 +4,8 @@ import './Swap2.css';
 import React, { useState } from "react";
 import {ethers} from "ethers";
 import Lolo from "../contracts/Lolo.json";
-import Modal from '../components/Modal';
+// import Modal from '../components/Modal';
+
 // import { Modal, Button } from "react-bootstrap";
 
 const Swap = ({_handleModal}) => {
@@ -95,9 +96,9 @@ const Swap = ({_handleModal}) => {
               Swap
               {/* <Modal /> */}
             </button>
-            <Modal _handleModal={_handleModal}>
+            {/* <Modal _handleModal={_handleModal}>
               <h1>Project Detail</h1>
-            </Modal>
+            </Modal> */}
             
             
             
