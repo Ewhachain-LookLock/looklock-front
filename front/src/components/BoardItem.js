@@ -25,10 +25,10 @@ const BoardItem = () => {
             <span>MARS</span>
             </div>
             <button onClick={() => this.openModal()} class='withdraw-btn'>Claim</button>
-            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+            {/* <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                 <h3>Modal title</h3>
                 <p>Content</p>
-            </Modal>
+            </Modal> */}
         </div>
     )
 };
