@@ -18,6 +18,7 @@ import Swap from './pages/Swap';
 import MyStatus from './pages/MyStatus';
 import ProjectDetail from './pages/ProjectDetail';
 import Partner from './pages/Partner';
+import Help from './pages/Help';
 import About from './pages/About';
 // import Admin from './pages/Admin';
 import Admin from './pages/Admintest';
@@ -221,6 +222,7 @@ export default function App() {
             <Route path="admin" element={<Admin />} />
             <Route path="mystatus" element={<MyStatus />} />
             <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
+            <Route path="help" element={<Help/>} />
             <Route path="*" element={<NoPage />} />
             {/* 디버깅용으로 register 페이지 임시 추가 */}
             <Route path="register" element={<Register />} />

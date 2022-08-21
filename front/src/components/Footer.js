@@ -30,7 +30,7 @@ const Footer = () => {
                                 <Link to="/swap">Swap</Link>
                             </li>
                             <li>
-                                <Link to="/swap">Help</Link>
+                                <Link to="/help">Help</Link>
                             </li>
                         </ul>
                         <ul id="links-right">
