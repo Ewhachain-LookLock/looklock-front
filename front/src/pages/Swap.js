@@ -4,34 +4,32 @@ import './Swap2.css';
 import React, { useState } from "react";
 import {ethers} from "ethers";
 import Lolo from "../contracts/Lolo.json";
-import Modal from '../pages/Modal';
+import Modal from '../components/Modal';
 
 
 const Swap = () => {
   const contractAddress = "0xaFF9247f8FBAD77B088a032c5Ce08987db9C0ebD"
-  const [amounts, setAmmounts] = useState('');
+  const [amounts, setAmounts] = useState('');
   // const [modalOpen, setModalOpen] = useState(false);
   // Modal control
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  const [showModal, setShowModal] = useState(false);
+  const onModalChange = (e) => {
+    
+  }
 
   const onChange = (e) => {
-    setAmmounts(e.target.value);
+    setAmounts(e.target.value);
   };
 
   const handleSwap = async () => {
     try{
+      console.log("clicked");
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const lolo = new ethers.Contract(contractAddress, Lolo.abi, signer);
 
       let swapTx = await lolo.swapForTest(amounts);
+      console.log(swapTx);
       this.openModal();
     }catch {
       console.log("Error while swapping");
@@ -95,20 +93,13 @@ const Swap = () => {
 
             <div class='slippage'>
               <div class='slippage-tolerance'>Slippage Tolerance</div>
-              <div class='slippage-ammount'>0.5%</div>
+              <div class='slippage-amount'>0.5%</div>
             </div>
             <button class="purple-gradient-btn" type="button" id="openModal" onClick={handleSwap}>
               Swap
+              {/* <Modal /> */}
             </button>
-            <Modal open={modalOpen} close={closeModal} header="Alert">
-              { /*Success*/}
-              <img id="swap-success-img" src={require('../Assets/lockdrop-success-alert.png')} alt="Swap-Success" />      
-              <div class='swap-success'>
-                <button class="success-btn" type="button" id="swap-success-btn" onClick={closeModal}>
-                  Done
-                </button>
-              </div>    
-            </Modal>
+            
           </div>  {/* end of swap-wrapper */}
         </div>
         <Footer/>
