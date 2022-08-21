@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import './App.css';
 
 import NavBar from "./components/NavBar";
@@ -24,6 +25,7 @@ import About from './pages/About';
 import Admin from './pages/Admintest';
 import Register from './pages/Register';
 import Memo from "./components/Memo";
+import Filter from "./components/Filter";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -163,30 +165,35 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <ScrollToTop/>
-        <Routes>
-          <Route path="/" element={
-              <NavBar 
-                currentAccount={currentAccount}
-                correctNetwork= {correctNetwork}
-                connectWallet = {connectWeb3Modal}
-                changeNetwork = {changeNetwork}
-                disconnectWeb3Modal = {disconnectWeb3Modal}
-              ></NavBar>}>
-            <Route index element={<Main />} />
-            <Route path="project" element={<Project />} />
-            <Route path='project/detail/:id' element={<ProjectDetail />} />
-            
-            <Route path="swap" element={<Swap />} />
-            <Route path="about" element={<About />} />
-            <Route path="admin" element={<Admin />} />
-            <Route path="mystatus" element={<MyStatus />} />
-            <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
-            <Route path="help" element={<Help/>} />
-            <Route path="*" element={<NoPage />} />
-            {/* 디버깅용으로 register 페이지 임시 추가 */}
-            <Route path="register" element={<Register currentAccount={currentAccount}/>} />
-          </Route>
-        </Routes>
+        <TransitionGroup>
+          <CSSTransition timeout={300} classNames="fade">
+            <Routes>
+              <Route path="/" element={
+                <NavBar 
+                  currentAccount={currentAccount}
+                  correctNetwork= {correctNetwork}
+                  connectWallet = {connectWeb3Modal}
+                  changeNetwork = {changeNetwork}
+                  disconnectWeb3Modal = {disconnectWeb3Modal}
+                ></NavBar>}>
+                <Route index element={<Main />} />
+                <Route path="project" element={<Project />} />
+                <Route path='project/detail/:id' element={<ProjectDetail />} />
+                
+                <Route path="swap" element={<Swap />} />
+                <Route path="about" element={<About />} />
+                <Route path="admin" element={<Admin />} />
+                <Route path="mystatus" element={<MyStatus />} />
+                <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
+                <Route path="help" element={<Help/>} />
+                <Route path="*" element={<NoPage />} />
+                {/* Debugging Pages */}
+                <Route path="register" element={<Register />} />
+                <Route path="filter" element={<Filter />} />
+              </Route>
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
       </BrowserRouter>
     </div>
   );
