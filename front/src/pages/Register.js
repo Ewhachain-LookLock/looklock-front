@@ -100,12 +100,12 @@ const Register = ({currentAccount}) => {
   const formatFormData = () => {
     const {title, tokenName, information, startDate} = projectInfo;
  
-    const rewardArray = rewards.reduce((array, {period}, {multiplier}) => {
+    const rewardArray = rewards.reduce((array, {period, multiplier}) => {
       array.push({days: period, boost: multiplier});
       return array;
     }, []);
 
-    const phase2periodArray = phase2.reduce((array, {period}, {percent}) => {
+    const phase2periodArray = phase2.reduce((array, {period, percent}) => {
       array.push({days: period, percent: percent});
       return array
     }, []);

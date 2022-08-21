@@ -62,7 +62,7 @@ export const ProjectInfo= (props) => {
 
     if (loading) console.log("loading..");
     if (error) return <div>요청한 데이터가 없습니다. </div>;
-    if (!project) return <div> no data </div>;
+    if (!project) return <div> Loading.. </div>;
     
     return( 
         <div class='mystatus-container'>

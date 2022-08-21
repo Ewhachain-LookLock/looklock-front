@@ -134,7 +134,7 @@ const ProjectDetail = () => {
 
     if (loading) console.log("loading..");
     if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
-    if (!project) return <div> no data </div>;
+    if (!project) return <div> Loading.. </div>;
 
     const base64String = btoa(String.fromCharCode(...new Uint8Array(project[0].projectImg.data.data)));
 

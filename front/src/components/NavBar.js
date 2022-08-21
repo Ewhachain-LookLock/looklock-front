@@ -50,7 +50,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork, d
     const {loading, data:user, error } = state;
     if (loading) console.log("loading..");
     if (error) return <div>error</div>;
-    if (!user) return <div>no data</div>;
+    if (!user) return <div>Loading..</div>;
     return (
         <>
         <nav id="navbar">

@@ -184,11 +184,11 @@ export default function App() {
                 <Route path="about" element={<About />} />
                 <Route path="admin" element={<Admin />} />
                 <Route path="mystatus" element={<MyStatus />} />
-                <Route path="partner" element={<Partner currentAccount = {currentAccount}/>} />
+                <Route path="partner" element={<Partner/>} />
                 <Route path="help" element={<Help/>} />
                 <Route path="*" element={<NoPage />} />
                 {/* Debugging Pages */}
-                <Route path="register" element={<Register />} />
+                <Route path="register" element={<Register currentAccount = {currentAccount}/>} />
                 <Route path="filter" element={<Filter />} />
               </Route>
             </Routes>

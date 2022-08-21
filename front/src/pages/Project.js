@@ -39,7 +39,7 @@ const Project = () => {
 
   if (loading) console.log("loading..");
   if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
-  if (!projects) return <div> no data </div>;
+  if (!projects) return <div> Loading.. </div>;
 
   return (
     <body>

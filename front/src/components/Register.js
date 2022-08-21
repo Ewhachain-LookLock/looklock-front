@@ -63,7 +63,7 @@ export default function Register() {
 
   if (loading) console.log("loading..");
   if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
-  if (!image) return <div> no data </div>;
+  if (!image) return <div> Loading.. </div>;
 
   const base64String = btoa(String.fromCharCode(...new Uint8Array(image[0].img.data.data)));
 
