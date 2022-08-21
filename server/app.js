@@ -12,8 +12,8 @@ const { default: mongoose } = require('mongoose');
 var cors = require('cors')
 
 var app = express();
-const port = 3001;
-app.listen(port, ()=> {
+
+app.listen(process.env.PORT || 3001, ()=> {
   console.log(`server starts at : http:localhost:${port}`);
 })
 app.use(cors());
