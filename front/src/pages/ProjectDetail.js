@@ -7,6 +7,7 @@ import React, {useReducer, useState, useEffect} from "react";
 import {useParams } from 'react-router-dom'
 import axios from "axios";
 import reducer from "../utils/reducer";
+import Select from 'react-select';
 
 const ProjectDetail = () => {
     const params = useParams()

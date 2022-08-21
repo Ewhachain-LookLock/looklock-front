@@ -19,55 +19,6 @@ import { ConstructorFragment } from 'ethers/lib/utils';
     {value:"public-goods", label: "Public Goods", id: 6},
   ];
 
-  const Option = (props) => {
-    const [isSelected, setIsSelected] = useState('');
-    return (
-      <div>
-        <components.Option {...props}>
-          <input
-            type="checkbox"
-            checked={isSelected}
-            onChange={() => null}
-          />{" "}
-          <label>{projectCategories.label}</label>
-        </components.Option>
-      </div>
-    );
-  };
-  
-  const allOption = {
-    label: "Select all",
-    value: "*"
-  };
-  
-  const ValueContainer = ({ children, ...props }) => {
-    const currentValues = props.getValue();
-    let toBeRendered = children;
-    if (currentValues.some(val => val.value === allOption.value)) {
-      toBeRendered = [[children[0][0]], children[1]];
-    }
-  
-    return (
-      <components.ValueContainer {...props}>
-        {toBeRendered}
-      </components.ValueContainer>
-    );
-  };
-  
-  const MultiValue = props => {
-    let labelToBeDisplayed = `${props.data.label}, `;
-    if (props.data.value === allOption.value) {
-      labelToBeDisplayed = "All is selected";
-    }
-    return (
-      <components.MultiValue {...props}>
-        <span>{labelToBeDisplayed}</span>
-      </components.MultiValue>
-    );
-  };
-
-  const animatedComponents = makeAnimated();
-
   // "title": "Look",
   // "information": ":Information about project ~!~", 
   // "rewards": [{"days": 30, "boost":1},{"days": 60, "boost":2},{"days": 90, "boost":3},{"days": 120, "boost":4} ] ,
@@ -90,12 +41,32 @@ const Register = () => {
     period : 0,
     multiplier : 1,
     allocation : 2
-  }
-])
+    }]
+  )
+  const [defaultRewards, setDefaultRewards] = useState({
+    period : 0,
+    multiplier : 1,
+    allocation : 2
+    }
+  )
+  const onAddMore = (newRewards) => {
+    setRewards([...rewards, newRewards]);
+  };
+
+  const [totalPeriod, setTotalPeriod] = useState("");
+  const onTotalPeriodChange = (e) => setTotalPeriod(e.target.value);
+  const [phase1Period, setPhase1Period] = useState("");
+  const onPhase1PeriodChange = (e) => setPhase1Period(e.target.value);
+  const [phase2Period, setPhase2Period] = useState("");
+  const onPhase2PeriodChange = (e) => setPhase2Period(e.target.value);
+
+
   const [phase2, setPhase2] = useState([{
     period : 0,
     percent : 0
   }])
+
+
 
   const [inputs, setInputs] = useState('');
 
@@ -113,7 +84,9 @@ const Register = () => {
 
   const onChange = (e)=>{
     setInputs(e.target.value);
-  };  
+  }; 
+  
+  
 
   const [files, setFiles] = useState('');
   const onLoadFile = (e) => {
@@ -123,6 +96,7 @@ const Register = () => {
   }
 
   return (
+
     <body>
       <div class='register-container d-flex flex-column'>
         <div class='go-back'>
@@ -137,7 +111,7 @@ const Register = () => {
                 <div class='register-txt'>
                   Project name
                 </div>
-                <input type="text" name="projectName" placeholder='Enter your project name' onChange={onChange} />
+                <input type="text" name="title" placeholder='Enter your project name' onChange={onProjectInfoChange} />
               </div>
               <div class='project-logo d-flex flex-wrap flex-column'>
                 <div class='register-txt'>
@@ -155,20 +129,13 @@ const Register = () => {
               <div class='register-txt'>Category</div>
               <div class='register-dropdown-bar'>
                 <span class='dropdown-category' data-toggle='pop-over' data-trigger="focus" data-content="Please select category(s)">
-                  <SelectCategory
-                    options={projectCategories}
+                  <Select
+                    defaultValue={''}
                     isMulti
-                    closeMenuOnSelect={false}
-                    hideSelectedOptions={false}
-                    components={{
-                      Option,
-                      MultiValue,
-                      ValueContainer,
-                      animatedComponents
-                    }}
-                    onChange={handleChange}
-                    allowSelectAll={true}
-                    value={optionSelected}
+                    name="projectCategory"
+                    options={projectCategories}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
                   />
                 </span>
                 {/* <Select options={projectCategories} /> */}
@@ -176,7 +143,7 @@ const Register = () => {
             </div>
             <div class='project-explain'>
               <div class='register-txt'>Project explanation</div>
-              <textarea name="projectExplanation" placeholder='Enter project detail explanation' onChange={onChange} />
+              <textarea name="information" placeholder='Enter project detail explanation' onChange={onProjectInfoChange} />
             </div>
           </div>
         </div>
@@ -187,78 +154,80 @@ const Register = () => {
           <div class='about-token-rewards'>
             <div class='token-name'>
               <div class='register-txt'>Token name</div>
-              <input type="text" name="tokenName" placeholder='Enter token name' onChange={onChange} />
+              <input type="text" name="tokenName" placeholder='Enter token name' onChange={onProjectInfoChange} />
               <div class='register-comment'>※ not needed if you use LOLO token</div>
             </div>
             <div class='token-address'>
               <div class='register-txt'>Contract address</div>
-              <input type="text" name="tokenAddress" placeholder='Enter contract address' onChange={onChange} />
+              <input type="text" name="tokenContract" placeholder='Enter contract address' onChange={onTokenContractChange} />
               <div class='register-comment add-address add-more'>add more..</div>
             </div>
             <div class='total-token-rewards detail-wrapper'>
               <h3>Total token rewards for lockdrop</h3>
               <div class='register-txt'>Cliff Period & Rewards multiplier & Allocation of Token Rewards</div>
               <div class='token-rewards-table'>
+                {/* <table>
+                  <tbody>
+                    <td>Lockdrop Periods</td>
+                  </tbody>
+                </table> */}
                 <table>
+                  <div class='token-rewards-thead'>
+                    <thead>
+                      Lockdrop Periods
+                    </thead>
+                    <thead>
+                      Multipliers
+                    </thead>
+                    <thead>
+                      Token Allocation
+                    </thead>
+                  </div>
                 {rewards.map((data, index) => {
                     console.log(data.period);
                     return(
                     // Lockdrop periods
-                    <tbody>
+                      <tbody>
                         {/* // Lockdrop periods */}
                         <tr>
-                          <label>Lockdrop Periods</label>
+                          {/* <label>Lockdrop Periods</label> */}
                           <td>
-                            <input type="text" name="period" value={data.period}></input> days
+                            <input type="text" name="period" value={data.period}></input>
+                            <label>days</label>
                           </td>
-                          <td>
-                            <input type="text" name="period" value={data.period}></input> days
-                          </td>
-                          <td>
-                            <input type="text" name="period" value={data.period}></input> days
-                          </td>
+                          
                         </tr>
                         {/* Multipliers */}
                         <tr>
-                          <label>Multipliers</label>
+                          {/* <label>Multipliers</label> */}
                           <td>
                             <input type="text" name="multiplier" value={data.multiplier}></input> 
                             <label>X</label>
                           </td>
-                          <td>
-                            <input type="text" name="multiplier" value={data.multiplier}></input>
-                            <label>X</label>
-
-                          </td>
-                          <td>
-                            <input type="text" name="multiplier" value={data.multiplier}></input> 
-                            <label>X</label>
-
-                          </td>
+                          
                         </tr>
                         {/* Token Allocation */}
                         <tr>
-                          <label>Token Allocation</label>
+                          {/* <label>Token Allocation</label> */}
                           <td>
                             <input type="text" name="allocation" value={data.allocation}></input>
                           </td>
-                          <td>
-                            <input type="text" name="allocation" value={data.allocation}></input>
-                          </td>
-                          <td>
-                            <input type="text" name="allocation" value={data.allocation}></input>
-                          </td>
+                          
                         </tr>
                       </tbody> 
                     )
                 })}
                 </table>
-        
-                
-                
                 {/* <Table rows={rows} data={tableData} /> */}
-                <div class='register-comment add-table add-more'>add more..</div> 
+                <div class='register-comment add-table add-more'>
+                  <button onClick={() => setRewards([...rewards, {
+                  period : 0,
+                  multiplier : 1,
+                  allocation : 2
+                  }])}>
+                  add more..</button>
                 {/* add more하면 onClick으로 세트 하나 더 생성 (...기존, new)   */}
+                </div>
               </div>
             </div>
           </div>
@@ -269,41 +238,73 @@ const Register = () => {
         <div class='lockdrop-period-wrapper register-wrapper d-flex flex-column'>
           <h1> 3. Tell about lockdrop period </h1>
           <div class='lockdrop-details detail-wrapper d-flex flex-column'>
-            <h3>Lockdrop Period</h3>
-            <div class='total-lockdrop-period d-inline-flex'>
-              <div class='register-txt'>Total Lockdrop Period</div>
-              <div class='period-form'>
-                dd/mm/yy~
-              </div>
+            <h3>Project Start Date</h3>
+            <div class='project-start-date'>
+              <input type="date" name="totalPeriod" placeholder="YYYY/MM/DD" onChange={onTotalPeriodChange} />
             </div>
-            <div class='phase1-period d-inline-flex'>
+            <div class='apply-period d-inline-flex'>
+              <h3>Apply Period</h3>
+              <div class='phase1-period d-inline-flex'>
               <div class='register-txt'>
-                <span class='phase1-txt'>Phase 1 </span> period (Date)
+                <span class='phase1-txt'>Phase 1 </span> total period (Days)
               </div>
-              <div class='period-form'></div>
-
+              <div class='period-form'>
+                <input type="number" name="phase1Period" onChange={onPhase1PeriodChange} /> days
+              </div>
               <div class='phase1-info'>
                 물음표 + 마우스 오버 효과
               </div>
             </div>
             <div class='phase2-period d-inline-flex'>
               <div class='register-txt'>
-                <span class='phase2-txt'>Phase 2 </span> period (Date)
+                <span class='phase2-txt'>Phase 2 </span> total period (Days)
               </div>
               <div class='phase2-info'>
                 물음표 + 마우스 오버 효과
               </div>
-              <div class='period-form'></div>
-
+              <div class='period-form'>
+                <input type="number" name="phase2Period" onChange={onPhase2PeriodChange} /> days
+              </div>
             </div>
+            </div>
+            
           </div>
           <div class='withdraw-details-wrapper detail-wrapper d-flex'>
             <h3>Withdrawable Percentage for Specific Periods in <span class='phase2-txt'>Phase 2</span>
             </h3>
             <div class='withdraw-detail-form d-inline-flex'>
-
+              <table>
+                {phase2.map((data, index) => {
+                  return(
+                    <div class='withdraw-detail-container'>
+                      <div class='withdraw-period'>
+                        <label>Period (days)</label>
+                        <div class='withdraw-period-detail detail-container'>
+                          <input type="number" name="period" value={data.period}></input>
+                          <label>days</label>
+                        </div>
+                      </div>
+                      <div class='withdraw-percent detail-container'>
+                        <label>Witdrawable Percentage</label>
+                        <div class='withdraw-percent-detail'>
+                          <input type="number" name="percent" value={data.percent}></input>
+                          <label>%</label>
+                        </div>
+                      </div>
+                    </div>
+                  )
+              })}
+                </table>
+                {/* <Table rows={rows} data={tableData} /> */}
+                <div class='register-comment add-table add-phase2 add-more'>
+                  <button onClick={() => setPhase2([...phase2, {
+                  period : 0,
+                  percent : 0
+                  }])}>
+                  add more..</button>
+                {/* add more하면 onClick으로 세트 하나 더 생성 (...기존, new)   */}
+                </div>
             </div>
-            <div class='register-comment add-more add-withdraw'>add more..</div>
           </div>
         </div>
         {/* end of 3. about lockdrop period */}

@@ -29,6 +29,9 @@ const Footer = () => {
                             <li>
                                 <Link to="/swap">Swap</Link>
                             </li>
+                            <li>
+                                <Link to="/swap">Help</Link>
+                            </li>
                         </ul>
                         <ul id="links-right">
                             <li id='link-partner'>
