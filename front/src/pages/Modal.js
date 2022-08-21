@@ -15,7 +15,10 @@ const Modal = (props) => {
               &times;
             </button>
           </header>
-          <main>{props.children}</main>
+          <main>
+            This is Modal
+            {props.children}
+          </main>
           <footer>
             <button className="close" onClick={close}>
               close
