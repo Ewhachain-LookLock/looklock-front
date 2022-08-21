@@ -1,0 +1,68 @@
+.help-title-wrapper {
+    margin-bottom: 150px;
+}
+
+#help-title {
+    font-weight: 700;
+    font-size: 60px;
+    color: #FFFFFF;
+}
+
+#help-title2 {
+    font-weight: 700;
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+.help-title-wrapper > p:nth-child(2) {
+    width: 80%;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.help-title-wrapper > p:nth-child(3), 
+.help-title-wrapper > p:nth-child(5) {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.help-title-wrapper > p:nth-child(4),
+.help-title-wrapper > p:nth-child(6),
+.help-title-wrapper > p:nth-child(7) {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+#phase-grid-textarea {
+    display: grid;
+    grid-template-columns: 100px 1200px;
+    column-gap: 10px;
+    row-gap: 50px;
+}
+
+
+#phase-grid-textarea > span:first-child,
+#phase-grid-textarea > span:nth-child(3) {
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+#phase-grid-textarea > span:nth-child(2),
+#phase-grid-textarea > span:nth-child(4) {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    font-family: 'Inter';
+    color: #FFFFFF;
+}

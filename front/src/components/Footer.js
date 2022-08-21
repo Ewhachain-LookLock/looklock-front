@@ -30,7 +30,7 @@ const Footer = () => {
                                 <Link to="/swap">Swap</Link>
                             </li>
                             <li>
-                                <Link to="/swap">Help</Link>
+                                <Link to="/help">Help</Link>
                             </li>
                         </ul>
                         <ul id="links-right">
@@ -56,7 +56,7 @@ const Footer = () => {
                         © LOOKLOCK. 2022. 
                     </div>
                 </div>
-                <div class='right-box'>
+                <div class='bottom-right-box'>
                     {/* Right Side */}
                     <div>
                         <ul id='contact-links'>

@@ -41,6 +41,11 @@ footer{
     /* border: 3px solid yellow; */
 }
 
+.bottom-right-box {
+    /* border: 3px solid yellow; */
+    margin-top: -20px;
+}
+
 .link-box {
     display: flex;
     margin-top: 15px;
@@ -74,6 +79,7 @@ footer{
 #contact-links > li {
     float: left;
     margin-right: 40px;
+    cursor: pointer;
 }
 
 li :link {
