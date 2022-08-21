@@ -104,13 +104,11 @@ const Register = ({currentAccount}) => {
       array.push({days: period, boost: multiplier});
       return array;
     }, []);
-    console.log(rewardArray);
 
     const phase2periodArray = phase2.reduce((array, {period}, {percent}) => {
       array.push({days: period, percent: percent});
       return array
     }, []);
-    console.log(phase2periodArray);
     
     const data = {
       title : title,
@@ -133,8 +131,8 @@ const Register = ({currentAccount}) => {
     formData.append("projectImg", files);
     const data = formatFormData();
     formData.append("data", JSON.stringify(data));
-    const json = JSON.stringify(data)
-  
+    const json = JSON.stringify(data);
+    console.log(json);
     await axios({
       method: 'post',
       url: 'https://looklock-backend.herokuapp.com/api/project',
@@ -148,7 +146,7 @@ const Register = ({currentAccount}) => {
         console.error(err);
       });
 
-      await axios.put(`https://looklock-backend.herokuapp.com/api/project/${currentAccount}`, {
+      await axios.put(`https://looklock-backend.herokuapp.com/api/user/${currentAccount}`, {
         isAdmin: true
       })
       .then(res => {
@@ -206,9 +204,7 @@ const Register = ({currentAccount}) => {
                       className="basic-multi-select"
                       classNamePrefix="select"
                       onChange={(choice) => {
-                        
                         setCategory(choice.map(c => c.value));
-                        console.log(category);
                       }}
                     />
                   </span>
