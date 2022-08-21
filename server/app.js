@@ -13,9 +13,7 @@ var cors = require('cors')
 
 var app = express();
 
-app.listen(process.env.PORT || 3001, ()=> {
-  console.log(`server starts at : http:localhost:${port}`);
-})
+app.listen(process.env.PORT || 3001);
 app.use(cors());
 //body-parser setup
 app.use(bodyParser.urlencoded({extended:true}));
