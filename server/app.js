@@ -8,14 +8,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 const bodyParser = require('body-parser');
 const { default: mongoose } = require('mongoose');
+require("dotenv").config();
 
 var cors = require('cors')
 
 var app = express();
-const port = 3001;
-app.listen(port, ()=> {
-  console.log(`server starts at : http:localhost:${port}`);
-})
+
+app.listen(process.env.PORT || 3001);
 app.use(cors());
 //body-parser setup
 app.use(bodyParser.urlencoded({extended:true}));
@@ -23,7 +22,8 @@ app.use(bodyParser.json());
 
 //mongoose-setup
 mongoose.Promise = global.Promise;
-mongoose.createConnection('mongodb://127.0.0.1:27017/');
+console.log("Testeing..: ", process.env.MONGODB_URI);
+mongoose.createConnection(process.env.MONGODB_URI);
 
 var db = mongoose.connection;
 db.on('error', console.error);
@@ -32,8 +32,9 @@ db.once('open', function() {
 });
 
 //mongodb://localhost/<db-name>
-mongoose.connect('mongodb://localhost/memo');
+mongoose.connect(process.env.MONGODB_URI+"/memo");
 
+console.log(".....................");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

@@ -6,7 +6,7 @@ const Memo = () => {
 
     const [memos, setMemos] = useState([]);
     const fetchMemoData = async() => {
-        await fetch(`http://localhost:3001/api/memo`,  {
+        await fetch(`https://looklock-backend.herokuapp.com/api/memo`,  {
                 method:"GET",
                 headers:{
                     "Content-Type": "application/json;charset=UTF-8",

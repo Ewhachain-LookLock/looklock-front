@@ -175,6 +175,14 @@
     color: #FFFFFF;
 }
 
+Modal {
+    position: absolute;
+    width: 490px;
+    height: 499px;
+
+    background: #23233F;
+    border-radius: 20px;
+}
 #swap-success-img {
     
 

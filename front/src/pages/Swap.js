@@ -4,43 +4,37 @@ import './Swap2.css';
 import React, { useState } from "react";
 import {ethers} from "ethers";
 import Lolo from "../contracts/Lolo.json";
-import Modal from '../pages/Modal';
+import Modal from '../components/Modal';
+// import { Modal, Button } from "react-bootstrap";
 
+const Swap = ({_handleModal}) => {
+  const contractAddress = "0xaFF9247f8FBAD77B088a032c5Ce08987db9C0ebD"
+  const [amounts, setAmounts] = useState('');
 
-const Swap = () => {
-  const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-  const [amounts, setAmmounts] = useState('');
-  // const [modalOpen, setModalOpen] = useState(false);
   // Modal control
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  const [showModal, setShowModal] = useState(false);
+  const handleClose = () => setShowModal(false);
+  const handleOpen = () => setShowModal(true);
 
   const onChange = (e) => {
-    setAmmounts(e.target.value);
+    setAmounts(e.target.value);
   };
 
   const handleSwap = async () => {
     try{
+      console.log("clicked");
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const lolo = new ethers.Contract(contractAddress, Lolo.abi, signer);
 
       let swapTx = await lolo.swapForTest(amounts);
-      this.openModal();
+      console.log(swapTx);
+      setShowModal(true);
     }catch {
       console.log("Error while swapping");
-      this.openModal();
+      setShowModal(true);
     }
   };
-
-
-
 
     return (
       <body>
@@ -95,20 +89,18 @@ const Swap = () => {
 
             <div class='slippage'>
               <div class='slippage-tolerance'>Slippage Tolerance</div>
-              <div class='slippage-ammount'>0.5%</div>
+              <div class='slippage-amount'>0.5%</div>
             </div>
             <button class="purple-gradient-btn" type="button" id="openModal" onClick={handleSwap}>
               Swap
+              {/* <Modal /> */}
             </button>
-            <Modal open={modalOpen} close={closeModal} header="Alert">
-              { /*Success*/}
-              <img id="swap-success-img" src={require('../Assets/lockdrop-success-alert.png')} alt="Swap-Success" />      
-              <div class='swap-success'>
-                <button class="success-btn" type="button" id="swap-success-btn" onClick={closeModal}>
-                  Done
-                </button>
-              </div>    
+            <Modal _handleModal={_handleModal}>
+              <h1>Project Detail</h1>
             </Modal>
+            
+            
+            
           </div>  {/* end of swap-wrapper */}
         </div>
         <Footer/>

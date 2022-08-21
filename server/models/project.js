@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
     },
     owner : {type: String, required:true},
     title: {type: String, required:true},
-    category: {type:String, required:true},
+    category: [{type: String}],
     information: {type:String, required:true}, 
     rewards: [{type: Map, of:Number}],
     startDate: {type: Date, default : null},

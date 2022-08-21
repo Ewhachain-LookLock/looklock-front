@@ -22,7 +22,7 @@ const Project = () => {
     dispatch({type : 'LOADING'});
         try {
             const response = await axios.get(
-                'http://localhost:3001/api/project/'
+                'https://looklock-backend.herokuapp.com/api/project/'
             );
             dispatch({type:'SUCCESS', data:response.data});
         } catch (e) {
