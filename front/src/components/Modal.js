@@ -6,15 +6,24 @@ const Modal = ({ _handleModal, children, ...rest }) => {
 
  
   return (
-    <Container>
-        <Background onClick={_handleModal} />
-        <ModalBlock {...rest}>
-            <Close onClick={_handleModal} />
-            <Contents>
-                {children}
-            </Contents>
-        </ModalBlock>
-    </Container>
+    <h1>
+      Hi
+    </h1>
+    // <ModalBlock {...rest}>
+    //   <Close onClick={_handleModal} />
+    //   <Contents>
+    //     {children}
+    //   </Contents>
+    // </ModalBlock>
+    // <Container>
+    //     <Background onClick={_handleModal} />
+    //     <ModalBlock {...rest}>
+    //         <Close onClick={_handleModal} />
+    //         <Contents>
+    //             {children}
+    //         </Contents>
+    //     </ModalBlock>
+    // </Container>
   );
 }
  
