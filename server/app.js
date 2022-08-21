@@ -23,7 +23,8 @@ app.use(bodyParser.json());
 
 //mongoose-setup
 mongoose.Promise = global.Promise;
-mongoose.createConnection('mongodb://127.0.0.1:27017/');
+console.log("Testeing..: ", process.env.MONGODB_URI);
+mongoose.createConnection(process.env.MONGODB_URI);
 
 var db = mongoose.connection;
 db.on('error', console.error);
@@ -32,7 +33,7 @@ db.once('open', function() {
 });
 
 //mongodb://localhost/<db-name>
-mongoose.connect('mongodb://localhost/memo');
+mongoose.connect(process.env.MONGODB_URI+"/memo");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
