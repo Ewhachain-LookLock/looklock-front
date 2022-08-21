@@ -1,6 +1,7 @@
 import Footer from '../components/Footer';
 import ProjectBox from '../components/ProjectBox';
 import './Project.css';
+import './Projectinfo.css';
 import React, {useState, useEffect, useReducer} from 'react';
 import axios from "axios";
 import reducer from "../utils/reducer";
