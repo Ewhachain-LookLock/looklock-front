@@ -241,12 +241,24 @@ const Register = () => {
             <h3>Project Start Date</h3>
             <div class='project-start-date'>
               <input type="date" name="totalPeriod" placeholder="YYYY/MM/DD" onChange={onTotalPeriodChange} />
+              <i class="bi bi-question-circle">
+                  <span class='tooltiptext'>
+                    This would be announced as the project start day in ‘upcoming’ phase in project detail page. <br/>
+                    However, the date can be changed as you click the Lockdrop Start button in admin page.
+                  </span>
+              </i>
             </div>
             <div class='apply-period d-inline-flex'>
               <h3>Apply Period</h3>
               <div class='phase1-period d-inline-flex'>
               <div class='register-txt'>
                 <span class='phase1-txt'>Phase 1 </span> total period (Days)
+                <i class="bi bi-question-circle">
+                  <span class='tooltiptext'>
+                    This would be announced as the project start day in ‘upcoming’ phase in project detail page. <br/>
+                    However, the date can be changed as you click the Lockdrop Start button in admin page.
+                  </span>
+                </i>
               </div>
               <div class='period-form'>
                 <input type="number" name="phase1Period" onChange={onPhase1PeriodChange} /> days

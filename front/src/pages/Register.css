@@ -3,6 +3,7 @@
     padding:0;
 }
 
+
 input:focus, textarea:focus{
     outline: 1px solid #9D21FF;
     /* outline: 1px solid linear-gradient(to bottom right, #9D21FF, #2254D3); */
@@ -287,7 +288,7 @@ td > label {
     display: flex;
     flex-direction: row;
 }
-.
+
 .withdraw-period{
     width: 8vw;
     margin-right: 6em;
