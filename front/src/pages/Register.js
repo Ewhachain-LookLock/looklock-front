@@ -127,7 +127,7 @@ const Register = ({currentAccount}) => {
 
     return data;
   }
-  const onSubmit= e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("projectImg", files);
@@ -135,7 +135,7 @@ const Register = ({currentAccount}) => {
     formData.append("data", JSON.stringify(data));
     const json = JSON.stringify(data)
   
-    axios({
+    await axios({
       method: 'post',
       url: 'https://looklock-backend.herokuapp.com/api/project',
       data: formData,
@@ -147,6 +147,17 @@ const Register = ({currentAccount}) => {
       .catch(err => {
         console.error(err);
       });
+
+      await axios.put(`https://looklock-backend.herokuapp.com/api/project/${currentAccount}`, {
+        isAdmin: true
+      })
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.error(err);
+      })
+
   };
 
 

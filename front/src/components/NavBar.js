@@ -34,6 +34,7 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork, d
                   dispatch({type:'SUCCESS', data:postResponse.data});
                   return
                 } catch (e) {
+                    console.log(e.message);
                     dispatch({type:'ERROR', error:e})
                 }
               }

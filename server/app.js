@@ -32,7 +32,7 @@ db.once('open', function() {
 });
 
 //mongodb://localhost/<db-name>
-mongoose.connect(process.env.MONGODB_URI+"/memo");
+mongoose.connect(process.env.MONGODB_URI);
 
 console.log(".....................");
 // view engine setup
