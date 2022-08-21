@@ -1,7 +1,10 @@
+import React, { useState } from "react";
 import '../pages/MyStatus.css';
+import Modal from './Modal';
+// import Modal from 'react-modal';
 
 const BoardItem = () => {
-    
+
     return (
         <div class='board-item'>
             <div class='mylock-items'>
@@ -21,7 +24,11 @@ const BoardItem = () => {
             <span>10,000</span>
             <span>MARS</span>
             </div>
-            <span class='withdraw-btn'>Claim</span>
+            <button onClick={() => this.openModal()} class='withdraw-btn'>Claim</button>
+            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                <h3>Modal title</h3>
+                <p>Content</p>
+            </Modal>
         </div>
     )
 };
