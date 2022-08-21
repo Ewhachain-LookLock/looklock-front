@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 
 //mongoose-setup
 mongoose.Promise = global.Promise;
+console.log("Testeing..: ", process.env.MONGODB_URI);
 mongoose.createConnection(process.env.MONGODB_URI);
 
 var db = mongoose.connection;
