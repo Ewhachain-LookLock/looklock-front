@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 const bodyParser = require('body-parser');
 const { default: mongoose } = require('mongoose');
+require("dotenv").config();
 
 var cors = require('cors')
 
