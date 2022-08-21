@@ -72,7 +72,7 @@ const Help = () => {
           <h2 id='help-title2'>
           Phase in LookLock</h2>
           <p>
-          During the phase 1 & 2, estimated rewards를 consider하여 자신의 deposit&withdrawal amount를 정하면 된다.
+          During the phase 1 & 2, users should determine their deposit & withdrawal amount considering estimated rewards. 
           </p>
           <div id='phase-grid-textarea'>
             <span>Phase 1</span>
