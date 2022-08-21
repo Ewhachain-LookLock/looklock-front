@@ -19,55 +19,6 @@ import { ConstructorFragment } from 'ethers/lib/utils';
     {value:"public-goods", label: "Public Goods", id: 6},
   ];
 
-  const Option = (props) => {
-    const [isSelected, setIsSelected] = useState('');
-    return (
-      <div>
-        <components.Option {...props}>
-          <input
-            type="checkbox"
-            checked={isSelected}
-            onChange={() => null}
-          />{" "}
-          <label>{projectCategories.label}</label>
-        </components.Option>
-      </div>
-    );
-  };
-  
-  const allOption = {
-    label: "Select all",
-    value: "*"
-  };
-  
-  const ValueContainer = ({ children, ...props }) => {
-    const currentValues = props.getValue();
-    let toBeRendered = children;
-    if (currentValues.some(val => val.value === allOption.value)) {
-      toBeRendered = [[children[0][0]], children[1]];
-    }
-  
-    return (
-      <components.ValueContainer {...props}>
-        {toBeRendered}
-      </components.ValueContainer>
-    );
-  };
-  
-  const MultiValue = props => {
-    let labelToBeDisplayed = `${props.data.label}, `;
-    if (props.data.value === allOption.value) {
-      labelToBeDisplayed = "All is selected";
-    }
-    return (
-      <components.MultiValue {...props}>
-        <span>{labelToBeDisplayed}</span>
-      </components.MultiValue>
-    );
-  };
-
-  const animatedComponents = makeAnimated();
-
   // "title": "Look",
   // "information": ":Information about project ~!~", 
   // "rewards": [{"days": 30, "boost":1},{"days": 60, "boost":2},{"days": 90, "boost":3},{"days": 120, "boost":4} ] ,
@@ -178,20 +129,13 @@ const Register = () => {
               <div class='register-txt'>Category</div>
               <div class='register-dropdown-bar'>
                 <span class='dropdown-category' data-toggle='pop-over' data-trigger="focus" data-content="Please select category(s)">
-                  <SelectCategory
-                    options={projectCategories}
+                  <Select
+                    defaultValue={''}
                     isMulti
-                    closeMenuOnSelect={false}
-                    hideSelectedOptions={false}
-                    components={{
-                      Option,
-                      MultiValue,
-                      ValueContainer,
-                      animatedComponents
-                    }}
-                    onChange={handleChange}
-                    allowSelectAll={true}
-                    value={optionSelected}
+                    name="projectCategory"
+                    options={projectCategories}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
                   />
                 </span>
                 {/* <Select options={projectCategories} /> */}
