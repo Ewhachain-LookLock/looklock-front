@@ -19,7 +19,7 @@ const project = {
         }
     },
 
-    read: async (req, res) => {
+    readByTitle: async (req, res) => {
         const proj = await Project.findByTitle(req.params.title);
         console.log("프로젝트 정보 : ", proj);
         try {
@@ -32,6 +32,22 @@ const project = {
             res.status(500).send(err)
         }
     },
+
+    readByOwner: async (req, res) => {
+        const proj = await Project.findByTitle(req.params.owner);
+        console.log("프로젝트 정보 : ", proj);
+        try {
+            if(!proj.length)
+                return res.status(404).send({
+                    err: 'project not found'
+                });
+            res.send(proj);
+        } catch (err) {
+            res.status(500).send(err)
+        }
+    },
+
+
 
     write: async(req, res, file) => {
         try{
