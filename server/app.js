@@ -35,6 +35,7 @@ db.once('open', function() {
 //mongodb://localhost/<db-name>
 mongoose.connect(process.env.MONGODB_URI+"/memo");
 
+console.log(".....................");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
