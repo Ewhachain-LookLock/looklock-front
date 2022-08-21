@@ -5,17 +5,16 @@ import React, { useState } from "react";
 import {ethers} from "ethers";
 import Lolo from "../contracts/Lolo.json";
 import Modal from '../components/Modal';
+// import { Modal, Button } from "react-bootstrap";
 
-
-const Swap = () => {
+const Swap = ({_handleModal}) => {
   const contractAddress = "0xaFF9247f8FBAD77B088a032c5Ce08987db9C0ebD"
   const [amounts, setAmounts] = useState('');
-  // const [modalOpen, setModalOpen] = useState(false);
+
   // Modal control
   const [showModal, setShowModal] = useState(false);
-  const onModalChange = (e) => {
-    
-  }
+  const handleClose = () => setShowModal(false);
+  const handleOpen = () => setShowModal(true);
 
   const onChange = (e) => {
     setAmounts(e.target.value);
@@ -30,15 +29,12 @@ const Swap = () => {
 
       let swapTx = await lolo.swapForTest(amounts);
       console.log(swapTx);
-      this.openModal();
+      setShowModal(true);
     }catch {
       console.log("Error while swapping");
-      this.openModal();
+      setShowModal(true);
     }
   };
-
-
-
 
     return (
       <body>
@@ -99,6 +95,11 @@ const Swap = () => {
               Swap
               {/* <Modal /> */}
             </button>
+            <Modal _handleModal={_handleModal}>
+              <h1>Project Detail</h1>
+            </Modal>
+            
+            
             
           </div>  {/* end of swap-wrapper */}
         </div>
