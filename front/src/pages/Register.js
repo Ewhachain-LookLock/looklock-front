@@ -8,7 +8,7 @@ import reducer from "../utils/reducer";
 
 
 //base server url
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://looklock-backend.herokuapp.com";
 // project category
 const projectCategories = [
   {value:"default", label: "Pick a Category", id: null},
@@ -137,7 +137,7 @@ const Register = ({currentAccount}) => {
   
     axios({
       method: 'post',
-      url: 'http://localhost:3001/api/project',
+      url: 'https://looklock-backend.herokuapp.com/api/project',
       data: formData,
         })
       .then(res => {

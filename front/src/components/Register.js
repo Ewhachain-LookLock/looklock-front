@@ -2,7 +2,7 @@ import React, { useState, useReducer, useEffect } from "react";
 import axios from "axios";
 import reducer from "../utils/reducer";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://looklock-backend.herokuapp.com";
 export default function Register() {
   const [content, setContent] = useState();
   const [name, setName] = useState("");
@@ -19,7 +19,7 @@ export default function Register() {
     dispatch({type: 'LOADING'});
     try {
       const response = await axios.get(
-        'http://localhost:3001/api/image'
+        'https://looklock-backend.herokuapp.com/api/image'
       );
       dispatch({type:'SUCCESS', data:response.data});
       //setImageObj(response.data[0].img);
@@ -50,7 +50,7 @@ export default function Register() {
     formData.append("name", name);
     formData.append("description", desc);
     axios
-      .post("http://localhost:3001/api/image", formData)
+      .post("https://looklock-backend.herokuapp.com/api/image", formData)
       .then(res => {
         console.log(res.data);
         alert("The file is successfully uploaded");

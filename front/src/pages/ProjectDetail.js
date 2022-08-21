@@ -34,7 +34,7 @@ const ProjectDetail = () => {
         try {
             console.log(params);
             const response = await axios.get(
-                'http://localhost:3001/api/project/' +  params.id
+                'https://looklock-backend.herokuapp.com/api/project/' +  params.id
             );
             dispatch({type:'SUCCESS', data:response.data});
             

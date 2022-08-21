@@ -22,14 +22,14 @@ const NavBar = ({currentAccount, correctNetwork, connectWallet, changeNetwork, d
         dispatch({type : 'LOADING'});
         try {
             const response = await axios.get(
-                'http://localhost:3001/api/user', {params: {address: currentAccount}}
+                'https://looklock-backend.herokuapp.com/api/user', {params: {address: currentAccount}}
             );
             dispatch({type:'SUCCESS', data:response.data});
         } catch (e) {
             if (e.response.status === 404) {
                 try {
                   const postResponse = await axios.post(
-                    'http://localhost:3001/api/user', {address: currentAccount}
+                    'https://looklock-backend.herokuapp.com/api/user', {address: currentAccount}
                   );
                   dispatch({type:'SUCCESS', data:postResponse.data});
                   return

@@ -17,7 +17,7 @@ export const ProjectInfo= (props) => {
         dispatch({type : 'LOADING'});
         try {
             const response = await axios.get(
-                'http://localhost:3001/api/project', {params: {title: props.title}}
+                'https://looklock-backend.herokuapp.com/api/project', {params: {title: props.title}}
             );
             dispatch({type:'SUCCESS', data:response.data});
         } catch (e) {
