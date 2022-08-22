@@ -122,6 +122,7 @@ input{
     background: #272749;
     border-radius: 5px;
     color: white;
+    
 
 }
 .detail-wrapper > h3, .apply-period > h3{
@@ -174,8 +175,8 @@ Select{
 
 .logo-img{
     display: flex;
-    flex-direction: row;
-    justify-content: end;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     height: auto;
     line-height: normal;
     width: 15vw;
@@ -190,6 +191,7 @@ Select{
     background: #14141F;
     border: 1px solid #31314D;
     color: #585858;
+    align-items: center;
 }
 
 .logo-img > label {
@@ -198,10 +200,10 @@ Select{
     background: #272749;
     border-radius: 5px;
     /* padding: .65em 1.25em; */
-    padding: 22px;
+    padding: 10px 20px;
     position: relative;
-    margin-top: -7px;
-    margin-right: -7px;
+    margin-top: 0px;
+    margin-right: 0px;
     /* left: 5vw; */
     /* top: 0.4em; */
     cursor: pointer;
@@ -211,8 +213,10 @@ Select{
     border: none;
     background: none;
     position: relative;
-    left: 4vw;
-    margin-top: -16px;
+    display: flex;
+    align-items: center;
+    left: 1vw;
+    /* margin-top: 20px; */
 }
 Select{
     container: inherit;
@@ -330,6 +334,7 @@ td > label {
     display: flex;
     width: 1.5em;
     text-align: end;
+    margin-left: -15px;
 
 }
 
