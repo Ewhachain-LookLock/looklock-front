@@ -2,6 +2,7 @@ import React from "react";
 import '../pages/MyStatus.css';
 import './Style.css';
 import Timer from './Timer.js';
+import TimerTemp from "./TimerTemp";
 
 // import ReactDOM from 'react-dom';
 
@@ -43,7 +44,7 @@ const CustomModal = ({ onRequestClose }) => {
                 You can withdraw 100% of your locked assets<br/>
                 until the timer ends.
 				</p>
-                <Timer/>
+                <TimerTemp />
                 <p id='red-modal-txt'>Only 1 withdrawal transaction can be<br/> made after the phase 2 begins.</p>
                 <div id='horizontal-line'></div>
                 <div class='modal-grid-box'>
