@@ -70,7 +70,7 @@ Projects launchers can start their projects or see the projects’ progression i
 ## Development Topic
 * Looklock is a web-app project built with React framework (front), MongoDB(back), and Solidity(contract).
 * [Smart Contract Address](https://mumbai.polygonscan.com/address/0x66ff8b2e0d031d704a9c5b22bf52e6f763a53402)
-* VaultFactory 주소 : 0x66ff8B2E0d031D704a9C5b22Bf52e6F763a53402
+* VaultFactory Address : 0x66ff8B2E0d031D704a9C5b22Bf52e6F763a53402
 
 ## Online Demo
 * [Project Description Video](https://youtu.be/LYGQxI2Uj2g)
