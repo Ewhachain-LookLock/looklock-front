@@ -45,6 +45,8 @@ Examples of which features are powered by LookLock include:
 3. `npm install`
 4. `npm start`
 
+** To fully experience Looklock, we recommend to connect your wallet first.
+
 ## Features
 #### Project List   
 ![ProjectList_c](https://user-images.githubusercontent.com/87629090/185958765-104fd5d0-eba5-4c09-a5ec-2afcdea2cb78.png)    
