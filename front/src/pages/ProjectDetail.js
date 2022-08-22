@@ -9,7 +9,60 @@ import axios from "axios";
 import reducer from "../utils/reducer";
 import Select from 'react-select';
 
+const CustomInnerModal = ({ onRequestClose }) => {
+
+    const [isModalOpen, setModalIsOpen] = useState(false);
+	
+	console.log(useState("hello")[1])
+
+	const toggleModal = () => {
+		setModalIsOpen(!isModalOpen);
+	};
+	// Use useEffect to add an event listener to the document
+	useEffect(() => {
+		function onKeyDown(event) {
+			if (event.keyCode === 27) {
+				// Close the modal when the Escape key is pressed
+				onRequestClose();
+			}
+		}
+
+		// Prevent scolling
+		document.body.style.overflow = "hidden";
+		document.addEventListener("keydown", onKeyDown);
+
+		// Clear things up when unmounting this component
+		return () => {
+			document.body.style.overflow = "visible";
+			document.removeEventListener("keydown", onKeyDown);
+		};
+	});
+
+	return (
+		<div className="modal__backdrop">
+			<div className="modal__container modal-success">
+                <div id='modal-img-area'>
+                    <img src={require("../Assets/success-confirm.png")} class='success-confirm-modal-img' alt="success img"/>
+                </div>
+                <div id='modal-btn-area'>
+                    <button onClick={onRequestClose} class='modal-withdrawal-btn done-btn' id='custom-modal-here'>
+                        Done
+                    </button>
+                </div>
+			</div>
+		</div>
+	);
+};
+
 const ProjectDetail = () => {
+
+    const [isModalOpen, setModalIsOpen] = useState(false);
+	
+	console.log(useState("hello")[1])
+	const toggleModal = () => {
+		setModalIsOpen(!isModalOpen);
+	};
+
     const params = useParams()
     const [currentPhase, setCurrentPhase] = useState('');
     const [selectedDays, setSelectedDays] = useState(0);
@@ -150,12 +203,6 @@ const ProjectDetail = () => {
 
     const handleInput = e => {
         setAmmounts(e.target.value);
-    }
-
-    const handleBoost = e => {
-        if (selectedDays === 30) {
-            setBoost(3);
-        }
     }
 
     if (loading) console.log("loading..");
@@ -355,9 +402,8 @@ const ProjectDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <button id="lockup-btn">
-                            Lock Up
-                        </button>
+                        <button id="lockup-btn" onClick={toggleModal}>Lock Up</button>
+                        {isModalOpen && <CustomInnerModal onRequestClose={toggleModal} />}
                     </div>
                 </div>
             </div>

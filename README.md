@@ -39,6 +39,14 @@ Examples of which features are powered by LookLock include:
 |:---------:|:---------:|:------------:|:---------:|:-----------:|:-----------:|
 | Developer |     PM    |   Designer   |     PM    |  Developer  |  Developer  |
 
+## To Start
+1. `git clone https://github.com/Ewhachain-LookLock/looklock-front.git`
+2. `cd looklock-front/front`
+3. `npm install`
+4. `npm start`
+
+** To fully experience Looklock, we recommend to connect your wallet first.
+
 ## Features
 #### Project List   
 ![ProjectList_c](https://user-images.githubusercontent.com/87629090/185958765-104fd5d0-eba5-4c09-a5ec-2afcdea2cb78.png)    
@@ -59,7 +67,7 @@ Investors can check the status of their investments and unclock the token as the
 Projects launchers can start their projects or see the projects’ progression in admin page.
 
 ## Development Topic
-* (개발 도구)
+* Looklock is a web-app project built with React framework (front), MongoDB(back), and Solidity(contract).
 * [Smart Contract Address](https://mumbai.polygonscan.com/address/0x66ff8b2e0d031d704a9c5b22bf52e6f763a53402)
 
 ## Online Demo
