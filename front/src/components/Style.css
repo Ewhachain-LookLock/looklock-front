@@ -194,7 +194,7 @@
     background: #23233F;
     border-radius: 20px;
     width: 350px;
-    height: 600px;
+    height: max-content;
 	max-width: 100%;
 	margin: 50px auto;
 	padding: 40px;
@@ -205,20 +205,110 @@
 .modal__title {
     font-weight: 600;
     font-size: 24px;
-    line-height: 29px;
     align-items: center;
     text-align: center;
     color: #FFFFFF;
-	margin-bottom: 25px;
+	/* margin-bottom: 25px; */
 }
 
 .modal__container > p {
     font-weight: 500;
     font-size: 14px;
-    line-height: 30px;
+    line-height: 24px;
+    margin-bottom: 20px;
     align-items: center;
     text-align: center;
     color: #CDCDCD;
+}
+
+#red-modal-txt {
+    font-weight: 500;
+    font-size: 12px;
+    /* display: flex; */
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    color: #B90505;
+    margin-top: 30px;
+}
+
+.modal-grid-box {
+    display: grid;
+    grid-template-columns: 300px 250px;
+    column-gap: 0;
+    row-gap: 25px;
+}
+
+.modal-grid-box > span:nth-child(1),
+.modal-grid-box > span:nth-child(3),
+.modal-grid-box > span:nth-child(5) {
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+    color: #B4B4B4;
+}
+
+.modal-grid-box > span:nth-child(2),
+.modal-grid-box > span:nth-child(4),
+.modal-grid-box > span:nth-child(6) {
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+#modal-withdrawal-amount > p:first-child {
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+    color: #B4B4B4;
+    margin-bottom: 20px;
+}
+
+#modal-withdrawal-amount > p:nth-child(3) {
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #B4B4B4;
+    margin-top: 10px;
+}
+
+.modal-input-area {
+    display: flex;
+    justify-content: end;
+    box-sizing: border-box;
+    padding-right: 30px;
+    margin: 0;
+    width: 550px;
+    height: 90px;
+    background: #12122A;
+    border-radius: 10px;
+}
+
+.modal-input-area > span {
+    font-weight: 500;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#modal-li-txt {
+    margin-bottom: 60px;
+}
+
+#modal-li-txt > ul {
+    list-style-type: circle;
+}
+
+#modal-li-txt > ul > li {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: rgba(205, 205, 205, 0.66);
 }
 
 .modal-btn-area {

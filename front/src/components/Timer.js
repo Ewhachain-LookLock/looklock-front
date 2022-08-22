@@ -1,7 +1,7 @@
 import './Style.css';
 import { useState } from 'react';
 
-const Timer = (props ) => {
+const Timer = (props) => {
 
     const [days,setDays] = useState(0);
     const [hours,setHours] = useState(0);
