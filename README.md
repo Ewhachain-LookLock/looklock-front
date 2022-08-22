@@ -73,7 +73,7 @@ Projects launchers can start their projects or see the projects’ progression i
 * VaultFactory Address : 0x66ff8B2E0d031D704a9C5b22Bf52e6F763a53402
 
 ## Online Demo
-* [Project Description Video](https://youtu.be/LYGQxI2Uj2g)
+* [Looklock Demo Video](https://youtu.be/LYGQxI2Uj2g)
 
 ### Contact
 * Email: crypto4elena@gmail.com
