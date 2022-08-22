@@ -41,20 +41,21 @@ Examples of which features are powered by LookLock include:
 
 ## Features
 #### Project List   
-![ProjectList](https://user-images.githubusercontent.com/87629090/184646242-9f11835d-a52b-4714-8688-3fd6efad475f.png)  
+![ProjectList_c](https://user-images.githubusercontent.com/87629090/185958765-104fd5d0-eba5-4c09-a5ec-2afcdea2cb78.png)    
 Investors can find diverse lockdrop projects only just on a few page. They can grasp the information of the projects such as rewards, lock period, phase at a glance.   
 
 #### Project Details
-![ProjectDetail](https://user-images.githubusercontent.com/87629090/184646233-63261fdc-89e3-4ee6-ad35-af4b9ca7f9ea.png)  
+![projectdetail_c](https://user-images.githubusercontent.com/87629090/185958789-37202b1d-2594-4f22-ab8e-6dd9a3f2f7e7.png)    
 If investors want to know more about the project, they can see detailed information on the project details page.   
 
 #### Status   
-![MyStatus](https://user-images.githubusercontent.com/87629090/184646251-1190f0e7-c8c7-40d3-b399-c678cc48be88.png)      
+![status_c](https://user-images.githubusercontent.com/87629090/185958807-18bdea65-1d65-4207-a76b-687de39b7a68.png)      
 * for both **investor** and **project launcher**      
 
 Investors can check the status of their investments and unclock the token as the project ends.   
 
-(대시보드 캡쳐본)   
+#### Admin
+![admin_c](https://user-images.githubusercontent.com/87629090/185958828-aa4b1f1b-e2b4-4fe1-b9aa-ca142ec6f325.png)    
 Projects launchers can start their projects or see the projects’ progression in admin page.
 
 ## Development Topic
@@ -62,5 +63,5 @@ Projects launchers can start their projects or see the projects’ progression i
 * Smart Contract Address (링크)
 
 ## Online Demo
-* Live Online demo is available at (링크)
+* Project demo is available at (링크)
 * Description Video (링크)
