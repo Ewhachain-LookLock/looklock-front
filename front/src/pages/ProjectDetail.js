@@ -17,7 +17,22 @@ const ProjectDetail = () => {
     // const [phase1Due, setPhase1Due] = useState(new Date());
     // const [phase2Due, setPhase2Due] = useState(new Date());
     const [dueDate, setDueDate] = useState();
+    const [estReward, setEstReward] = useState(0);  // day 별 estimated rewards
+    const [estPercent, setEstPercent] = useState(0);
+    // const [est, setEst] = useState([{
+    //     amount: 0,
+    //     reward: 0,
+    //     percent: 0
+    // }])
 
+    // const handleInput = (index, target) => e => {
+    //     let newArr = [...est];
+    //     newArr[index] = Number(e.target.value);
+    //     setEst(newArr);
+    // }
+    const handleInput = e => {
+        setAmmounts(e.target.value);
+    }
     const [state, dispatch] = useReducer(reducer, {
         loading: false,
         data: null,
@@ -125,12 +140,10 @@ const ProjectDetail = () => {
     }
 
     const handleClick = e => {
+        // let days = e.target.value;
         setSelectedDays(parseInt(e.target.value));
+        
     };
-
-    const handleInput = e => {
-        setAmmounts(e.target.value);
-    }
 
     if (loading) console.log("loading..");
     if (error) return <div>요청한 데이터가 없습니다. {error.message}</div>;
@@ -306,7 +319,7 @@ const ProjectDetail = () => {
                             <div id='duration-container'>
                                 <span>Duration (days)</span>
                                 <div id='duration-btn-container'>
-                                    {project[0].rewards.map( (item) => 
+                                    {project[0].rewards.map( (item, index) => 
                                     <button class={item.days===selectedDays ? 'duration-btn btnselected' : 'duration-btn'} 
                                     value = {item.days} onClick={handleClick}>{item.days}</button>
                                 )}
@@ -316,7 +329,10 @@ const ProjectDetail = () => {
                                 <div class='flex'>
                                     <span>Est Lockdrop Rewards</span>
                                     <div>
-                                        <span id='est-usd'>150</span>
+                                        <span id='est-usd'>
+                                        {/* {Number(selectedDays) *1.5} */}
+                                        
+                                        </span>
                                         <span>ZELO</span>
                                     </div>
                                 </div>

@@ -580,7 +580,7 @@ td > label {
   }
 
   
-input:focus, textarea:focus, input:hover, textarea:hover{
+input:focus, textarea:focus {
     color: white;
     outline: 1px solid #9D21FF;
     /* outline: 1px solid linear-gradient(to bottom right, #9D21FF, #2254D3); */
