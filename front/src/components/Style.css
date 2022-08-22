@@ -277,6 +277,7 @@
 .modal-input-area {
     display: flex;
     justify-content: end;
+    align-items: center;
     box-sizing: border-box;
     padding-right: 30px;
     margin: 0;
@@ -288,9 +289,22 @@
 
 .modal-input-area > span {
     font-weight: 500;
-    font-size: 32px;
-    display: flex;
+    font-size: 16px;
     align-items: center;
+    color: #CDCDCD;
+}
+
+.modal-input-num {
+    width: 400px;
+    height: 60px;
+    background: #12122A;
+    border: none;
+    text-align: right;
+    font-weight: 500;
+    font-size: 32px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
     color: #FFFFFF;
 }
 

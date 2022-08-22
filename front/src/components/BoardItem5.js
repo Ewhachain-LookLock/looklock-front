@@ -10,6 +10,13 @@ const { useState, useEffect } = React;
 
 const CustomModal = ({ onRequestClose }) => {
 
+    var yourDeposits = 700;
+    const [amounts, setAmounts] = useState('');
+
+    const onChange = (e) => {
+        setAmounts(e.target.value);
+      };
+
     const [isModalOpen, setModalIsOpen] = useState(false);
 	
 	console.log(useState("hello")[1])
@@ -59,9 +66,10 @@ const CustomModal = ({ onRequestClose }) => {
                     <p>Withdrawal Amount</p>
                     {/* input */}
                     <div class='modal-input-area'>
-                        <span>700 LOLO</span>
+                        <input class='modal-input-num' placeholder='0' onChange={onChange} value={amounts} type='number'/>
+                        <span>LOLO</span>
                     </div>
-                    <p>My locked token in the pool : 0 LOLO</p>
+                    <p>My locked token in the pool : {yourDeposits - amounts} LOLO</p>
                 </div>
                 <div id='modal-li-txt'>
                     <ul>
