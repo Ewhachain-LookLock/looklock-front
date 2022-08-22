@@ -14,7 +14,7 @@
 * [Features](#Features)
 	* [Project List](#Project-List)
 	* [Project Details](#Project-Details)
-	* [My Status](#Status)
+	* [My Status](#My-Status)
 * [Development Topic](#Development-Topic)
 * [Online Demo](#Online-Demo)    
 
@@ -48,7 +48,7 @@ Investors can find diverse lockdrop projects only just on a few page. They can g
 ![projectdetail_c](https://user-images.githubusercontent.com/87629090/185958789-37202b1d-2594-4f22-ab8e-6dd9a3f2f7e7.png)    
 If investors want to know more about the project, they can see detailed information on the project details page.   
 
-#### Status   
+#### My Status   
 ![status_c](https://user-images.githubusercontent.com/87629090/185958807-18bdea65-1d65-4207-a76b-687de39b7a68.png)      
 * for both **investor** and **project launcher**      
 
