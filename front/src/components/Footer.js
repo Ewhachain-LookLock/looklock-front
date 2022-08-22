@@ -35,13 +35,13 @@ const Footer = () => {
                         </ul>
                         <ul id="links-right">
                             <li id='link-partner'>
-                                <Link to="/partner">Partner</Link>
+                                Partner
                             </li>
                             <li>
-                                <Link to="/about">About</Link>
+                                <Link to="/partner">About</Link>
                             </li>
                             <li>
-                                <Link to="/admin">Register</Link>
+                                <Link to="/register">Register</Link>
                             </li>
                         </ul>
                     </div>
