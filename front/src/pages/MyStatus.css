@@ -252,9 +252,9 @@
     cursor: pointer;
 }
 
-.claim-btn:hover {
+/* .claim-btn:hover {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(93.27deg, #C137D8 22.4%, #EAA41B 104.39%);
-}
+} */
 
 .days-btn {
     display: flex;

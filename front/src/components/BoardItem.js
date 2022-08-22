@@ -28,45 +28,31 @@ const CustomModal = ({ onRequestClose }) => {
 	});
 
 	return (
-		<div className="modal__backdrop">
-			<div className="modal__container">
-				<h3 className="modal__title">Withdraw Liquidity</h3>
+		<div class="modal__backdrop">
+			<div class="modal__container">
 				<p>
-                You can withdraw 100% of your locked assets<br/>
-                until the timer ends.
+                Your rewards will be available in
 				</p>
                 <Timer/>
-                <p id='red-modal-txt'>Only 1 withdrawal transaction can be<br/> made after the phase 2 begins.</p>
                 <div id='horizontal-line'></div>
-                <div class='modal-grid-box'>
-                    <span>Locked until</span>
-                    <span>22.05.15</span>
-                    <span>Your Deposits</span>
-                    <span>700 LOLO</span>
-                    <span>Max witdrawable amount</span>
-                    <span>700 LOLO</span>
-                </div>
-                <div id='modal-withdrawal-amount'>
-                    <p>Withdrawal Amount</p>
-                    {/* input */}
-                    <div class='modal-input-area'>
-                        <span>700 LOLO</span>
+                <h1 id='modal-congrats'>Congrats!</h1>
+                <p>You can claim your rewards!</p>
+                <div id='modal-sum-area'>
+                    <div class='modal-grey-box'>
+                        <span>Token Rewards</span>
+                        <span>700</span>
+                        <span>ZELO</span>
                     </div>
-                    <p>My locked token in the pool : 0 LOLO</p>
-                </div>
-                <div id='modal-li-txt'>
-                    <ul>
-                        <li>· Deposits close after phase 1 and only withdrawals are allowed in phase 2.</li>
-                        <li>· The max withdrawable amount decreases linearly in phase 2.</li>
-                        <li>· From 4/10 to 4/11, users can withdraw up to 80% of their deposit.</li>
-                        <li>· From 4/12 to 4/13, users can withdraw up to 50% of their deposit.</li>
-                        <li>· On 4/14, users can withdraw up to 30% of their deposit.</li>
-                        <li>· On 4/15, the final day. users can withdraw up to 10% of their deposit.</li>
-                    </ul>
+                    <div>+</div>
+                    <div class='modal-grey-box'>
+                        <span>Locked asset</span>
+                        <span>1400</span>
+                        <span>LOLO</span>
+                    </div>
                 </div>
                 <div id='modal-btn-area'>
                     <button type="button" class='modal-withdrawal-btn' onClick={onRequestClose}>
-                        Withdrawal
+                    Claim 700 ZELO & 1400 LOLO
                     </button>
                 </div>
 			</div>
@@ -87,7 +73,7 @@ const BoardItem = () => {
         <div class='board-item'>
             <div class='mylock-items'>
             <span>
-                <img id="swap-from-eth" src={require('../Assets/logo/eth-logo.png')} alt="from-token-img" class='asset-token-img' />
+                <img id="swap-from-eth" src={require('../Assets/logo/marscoin-logo.png')} alt="from-token-img" class='asset-token-img' />
             </span>
             <span>Marscoin</span>
             </div>

@@ -311,6 +311,77 @@
     color: rgba(205, 205, 205, 0.66);
 }
 
+#modal-congrats {
+    font-weight: 600;
+    font-size: 36px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;    
+    margin-bottom: 0;
+}
+
+.modal__container > p:first-child {
+    margin-top: 10px;
+}
+
+.modal__container > p:nth-child(5) {
+    margin: 20px 0;
+    font-weight: 500;
+    font-size: 23px;
+    
+    align-items: center;
+    text-align: center;
+    
+    color: #CDCDCD;
+}
+
+#modal-sum-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#modal-sum-area > div:nth-child(2) {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    align-items: center;
+    text-align: center;
+    color: #CDCDCD;
+}
+
+.modal-grey-box {
+    width: 140px;
+    height: 117px;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    flex-direction: column;
+    background: #2D2D51;
+    border-radius: 10px;
+}
+
+.modal-grey-box > span:first-child,
+.modal-grey-box > span:last-child {
+    font-weight: 500;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    color: #B4B4B4;
+}
+
+.modal-grey-box > span:nth-child(2) {
+    font-weight: 600;
+    font-size: 28px;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
 .modal-btn-area {
     display: flex;
     justify-content: center;
@@ -343,4 +414,19 @@
     text-align: center;
     color: #CDCDCD;
     cursor: pointer;
+}
+
+.modal-unavailable-btn {
+    width: 388px;
+    height: 56px;
+    background: #6B6B6B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+    color: #CDCDCD;
+    cursor: not-allowed;    
 }
