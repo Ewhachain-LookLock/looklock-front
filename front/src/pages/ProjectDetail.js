@@ -130,6 +130,11 @@ const ProjectDetail = () => {
     const handleClick = e => {
         setSelectedDays(parseInt(e.target.value));
         // console.log(selectedDays);
+        // {project[0].rewards.map((item) =>
+        //     (
+        //         {item.days===selectedDays ? setBoost(item.boost) : 0}
+        //     ),
+        // )}
         if (selectedDays === 30) {
             setBoost(1);
         } else if (selectedDays === 60) {
@@ -344,7 +349,7 @@ const ProjectDetail = () => {
                                 <div class='flex'>
                                     <span>Est % of Rewards</span>
                                     <div>
-                                        <span id='est-percent'>0.70</span>
+                                        <span id='est-percent'>{ amounts * boost * 0.1 - 5}</span>
                                         <span>%</span>
                                     </div>
                                 </div>
