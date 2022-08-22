@@ -349,7 +349,7 @@ const ProjectDetail = () => {
                                 <div class='flex'>
                                     <span>Est % of Rewards</span>
                                     <div>
-                                        <span id='est-percent'>{ amounts * boost * 0.1 - 5}</span>
+                                        <span id='est-percent'>{Math.floor(amounts * boost * 0.2)}</span>
                                         <span>%</span>
                                     </div>
                                 </div>
