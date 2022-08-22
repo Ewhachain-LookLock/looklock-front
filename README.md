@@ -11,6 +11,7 @@
 ## Table of Contents   
 * [About](#About)    
 * [Teams](#Teams)
+* [To Start](#To-Start)
 * [Features](#Features)
 	* [Project List](#Project-List)
 	* [Project Details](#Project-Details)
@@ -35,7 +36,7 @@ Examples of which features are powered by LookLock include:
 * Expose new projects to users interested in Lockdrop
    
 ## Teams
-| Minji Koh | Jisoo Yoo | Hyeonseo Ryu | Jewon Huh | Jaeyeon Kim |  Jimin Kim  |
+| MinJi Koh | Jisoo Yoo | Hyeonseo Ryu | Jewon Huh | Jaeyeon Kim |  Jimin Kim  |
 |:---------:|:---------:|:------------:|:---------:|:-----------:|:-----------:|
 | Developer |     PM    |   Designer   |     PM    |  Developer  |  Developer  |
 
@@ -45,7 +46,7 @@ Examples of which features are powered by LookLock include:
 3. `npm install`
 4. `npm start`
 
-** To fully experience Looklock, we recommend to connect your wallet first.
+** To fully experience Looklock, we recommend you to connect your wallet first.
 
 ## Features
 #### Project List   
@@ -73,3 +74,7 @@ Projects launchers can start their projects or see the projects’ progression i
 ## Online Demo
 * Project demo is available at (링크)
 * Description Video (링크)
+
+### Contact
+Email: crypto4elena@gmail.com
+Devpost: (Link)
