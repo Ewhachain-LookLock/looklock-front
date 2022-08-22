@@ -10,6 +10,13 @@ const { useState, useEffect } = React;
 
 const CustomModal = ({ onRequestClose }) => {
 
+    var yourDeposits = 700;
+    const [amounts, setAmounts] = useState('');
+
+    const onChange = (e) => {
+        setAmounts(e.target.value);
+      };
+
     const [isModalOpen, setModalIsOpen] = useState(false);
 	
 	console.log(useState("hello")[1])
@@ -44,7 +51,7 @@ const CustomModal = ({ onRequestClose }) => {
                 You can withdraw 100% of your locked assets<br/>
                 until the timer ends.
 				</p>
-                <TimerTemp />
+                <TimerTemp date="Oct 3, 2022 00:00:00"/>
                 <p id='red-modal-txt'>Only 1 withdrawal transaction can be<br/> made after the phase 2 begins.</p>
                 <div id='horizontal-line'></div>
                 <div class='modal-grid-box'>
@@ -59,9 +66,10 @@ const CustomModal = ({ onRequestClose }) => {
                     <p>Withdrawal Amount</p>
                     {/* input */}
                     <div class='modal-input-area'>
-                        <span>700 LOLO</span>
+                        <input class='modal-input-num' placeholder='0' onChange={onChange} value={amounts} type='number'/>
+                        <span>LOLO</span>
                     </div>
-                    <p>My locked token in the pool : 0 LOLO</p>
+                    <p>My locked token in the pool : {yourDeposits - amounts} LOLO</p>
                 </div>
                 <div id='modal-li-txt'>
                     <ul>

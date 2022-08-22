@@ -1,7 +1,7 @@
 import React from "react";
 import '../pages/MyStatus.css';
 import './Style.css';
-import Timer from './Timer.js';
+import TimerTemp from './TimerTemp.js';
 // import ReactDOM from 'react-dom';
 
 const { useState, useEffect } = React;
@@ -33,7 +33,7 @@ const CustomModal = ({ onRequestClose }) => {
 				<p>
                 Your rewards will be available in
 				</p>
-                <Timer/>
+                <TimerTemp date="Sep 20, 2022 00:00:00"/>
                 <div id='horizontal-line'></div>
                 <h1 id='modal-congrats'>Congrats!</h1>
                 <p>You can claim your rewards!</p>
