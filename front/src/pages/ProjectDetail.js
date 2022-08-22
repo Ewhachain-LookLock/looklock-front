@@ -18,6 +18,9 @@ const ProjectDetail = () => {
     // const [phase2Due, setPhase2Due] = useState(new Date());
     const [dueDate, setDueDate] = useState();
 
+    const [rewards, setRewards] = useState('');
+    const [boost, setBoost] = useState('');
+
     const [state, dispatch] = useReducer(reducer, {
         loading: false,
         data: null,
@@ -126,10 +129,28 @@ const ProjectDetail = () => {
 
     const handleClick = e => {
         setSelectedDays(parseInt(e.target.value));
+        // console.log(selectedDays);
+        if (selectedDays === 30) {
+            setBoost(1);
+        } else if (selectedDays === 60) {
+            setBoost(3);
+        }
+        else if (selectedDays === 90) {
+            setBoost(6);
+        }
+        else if (selectedDays === 120) {
+            setBoost(9);
+        }
     };
 
     const handleInput = e => {
         setAmmounts(e.target.value);
+    }
+
+    const handleBoost = e => {
+        if (selectedDays === 30) {
+            setBoost(3);
+        }
     }
 
     if (loading) console.log("loading..");
@@ -316,7 +337,7 @@ const ProjectDetail = () => {
                                 <div class='flex'>
                                     <span>Est Lockdrop Rewards</span>
                                     <div>
-                                        <span id='est-usd'>150</span>
+                                        <span id='est-usd'>{amounts*boost}</span>
                                         <span>ZELO</span>
                                     </div>
                                 </div>
