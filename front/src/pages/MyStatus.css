@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     padding: 0 150px;
-    text-align: left;
 }
 
 /* MY ASSET */
@@ -11,6 +10,8 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
+    text-align: left;
+
 }
 
 #myasset-container > h3,
@@ -19,6 +20,8 @@
     font-weight: 600;
     font-size: 30px;
     color: #FFFFFF;
+    text-align: left;
+
 }
 
 #myasset-box {
@@ -82,6 +85,8 @@
     font-weight: 400;
     font-size: 14px;
     color: #CDCDCD;
+    text-align: left;
+
 }
 
 #board-header > span {

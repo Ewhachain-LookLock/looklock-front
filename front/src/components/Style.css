@@ -172,3 +172,85 @@
     border: none;
     cursor: pointer;
 }
+
+/* CUSTOM MODAL */
+
+.modal__backdrop {
+	background: rgba(0, 0, 0, .65);
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+    color: black;
+	z-index: 1;
+}
+
+.modal__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #23233F;
+    border-radius: 20px;
+    width: 350px;
+    height: 600px;
+	max-width: 100%;
+	margin: 50px auto;
+	padding: 40px;
+	width: 560px;
+    /* color: #FFF; */
+}
+
+.modal__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+	margin-bottom: 25px;
+}
+
+.modal__container > p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+    color: #CDCDCD;
+}
+
+.modal-btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid pink;
+}
+
+/* button style */
+
+.close-btn {
+    background-color: black;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.modal-withdrawal-btn {
+    width: 388px;
+    height: 56px;
+    background: linear-gradient(102.13deg, #9D21FF -18.49%, #2254D3 131.68%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+    color: #CDCDCD;
+    cursor: pointer;
+}
