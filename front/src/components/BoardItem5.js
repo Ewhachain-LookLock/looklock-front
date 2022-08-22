@@ -51,7 +51,7 @@ const CustomModal = ({ onRequestClose }) => {
                 You can withdraw 100% of your locked assets<br/>
                 until the timer ends.
 				</p>
-                <TimerTemp />
+                <TimerTemp date="Oct 3, 2022 00:00:00"/>
                 <p id='red-modal-txt'>Only 1 withdrawal transaction can be<br/> made after the phase 2 begins.</p>
                 <div id='horizontal-line'></div>
                 <div class='modal-grid-box'>
