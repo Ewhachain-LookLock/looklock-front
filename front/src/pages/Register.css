@@ -69,6 +69,7 @@ input:focus, textarea:focus{
     flex-direction: column;
     align-items: flex-start;
     margin: 0 0 1em 0em;
+    left: 0;
 }
 
 .register-project-name, .token-name, .token-address{
@@ -78,6 +79,11 @@ input:focus, textarea:focus{
     position: relative;
     left: 0;
     align-items: flex-start;
+}
+
+.token-name{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -100,7 +106,7 @@ input{
     line-height: normal;
     width: 18vw;
     /* margin-top: 1em; */
-    margin-right: 2em;
+    margin-right: 1em;
     padding: 0.85em .75em;
     border-radius: 5px;
     background: #14141F;
@@ -121,7 +127,14 @@ input{
 .detail-wrapper > h3, .apply-period > h3{
     font-size: 1.25rem;
     text-align: left;
-    margin: 5vh 0 0;
+    margin: 5vh 0 1vh 0;
+    /* position: absolute; */
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
 }
 .register-txt, .register-comment{
     color: #CDCDCD;
@@ -130,7 +143,7 @@ input{
     margin: 1em 0 0;
 }
 
-.register-project-name input, .register-dropdown-bar {
+.register-project-name input, .register-dropdown-bar{
     display: flex;
     align-items: center;
     height: auto;
@@ -150,6 +163,13 @@ input{
 
 .dropdown-category {
     min-width: 36vw;
+}
+Select{
+    background: #14141F;
+    width: 100%;
+}
+.basic-multi-select {
+    width: 100%;
 }
 
 .logo-img{
@@ -185,6 +205,17 @@ input{
     /* left: 5vw; */
     /* top: 0.4em; */
     cursor: pointer;
+}
+
+.img-route {
+    border: none;
+    background: none;
+    position: relative;
+    left: 4vw;
+    margin-top: -16px;
+}
+Select{
+    container: inherit;
 }
 .project-explain{
     display: flex;
@@ -236,7 +267,9 @@ input{
     color: #1EDC81;
     font-weight: bold;
 }
-
+.total-token-rewards {
+    margin-top: -15px;
+}
 table{
     display: flex;
     margin-top: 2em;
@@ -251,18 +284,22 @@ thead {
     color: #CDCDCD;
     display: flex;
 }
+tbody {
+    width: 130px;
+}
 .token-rewards-thead {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     /* width: 5vw; */
     text-align: left;
+
 }
 
 .token-rewards-thead > thead {
     min-width: 200px;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     margin-right: 15px;
 }
 
@@ -304,10 +341,29 @@ td > label {
     overflow-y: hidden;
 } */
 
-.lockdrop-details {
+.add-more-btn{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent; 
+    border:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    color: #6B6B6B;
+
+}
+.project-start {
+    margin-top: 35px;
+    text-align: start;
+    display: flex;
+
 }
 
-.project-start-date {
+.project-start-input {
     display: flex;
     /* border: 1px solid red; */
 }
@@ -360,15 +416,21 @@ td > label {
 
 .withdraw-detail-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     text-align: left;
+    margin-bottom: 1.5em;
 }
 
 .withdraw-period-detail {
     display: flex;
     align-items: center;
     width: max-content;
+}
+
+.period-input {
+    width: 105px;
+    margin-right: 1em;
 }
 
 .detail-container{
@@ -379,18 +441,21 @@ td > label {
 .withdraw-period{
     /* width: 8vw; */
     width: max-content;
-    margin-right: 6em;
+    margin-right: 2em;
 }
 
 .withdraw-percent{
     display: flex;
     flex-direction: column;
-    width: max-content;
+    width: 240px;
 }
 
 .withdraw-percent-detail {
     display: flex;
     align-items: center;
+    margin-right: 0;
+    width: 200px;
+
 }
 
 .add-phase2 {
@@ -401,3 +466,114 @@ td > label {
 .lockdrop-period-wrapper {
     min-height: 600px;
 }
+
+.period-form > input{
+    margin-left: 100px;
+    width: 100px;
+}
+/* .bi bi-question-circle{
+    color: #6B6B6B;
+    width: 50px;
+    height: 50px;
+}
+.arrow-box {
+    display: none;
+    position: absolute;
+    width: 100px;
+    padding: 8px;
+    left: 0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .arrow-box:after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border: solid transparent;
+    border-color: rgba(51, 51, 51, 0);
+    border-bottom-color: #333;
+    border-width: 10px;
+    pointer-events: none;
+    content: 'ab';
+  }
+  
+  .bi bi-question-circle:hover + p.arrow-box {
+    display: block;
+  } */
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    left: 10px;
+    top: 3px;
+    /*   border-bottom: 1px dotted black; */
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background: #181825;
+    border: 1px solid #6B6B6B;
+    border-radius: 10px;
+    color: #CDCDCD;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px 5px 10px 10px;
+    padding-left: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -1px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* 삼각형 
+    .tooltip .tooltiptext::after {
+    content: "1";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #6B6B6B transparent transparent transparent;
+  } */
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .startDate-tooltip .tooltiptext{
+    width: 40vw;
+  }
+
+  .phase1-tooltip .tooltiptext{
+    width: 20vw;
+    padding-right: 7px;
+  }
+
+
+  .phase2-tooltip .tooltiptext{
+    width: 16.5vw;
+    padding-right: 5px;
+  }
+
+  .apply-period > h3 {
+    margin-top: 40px;
+    margin-bottom: -10px;
+  }
+  
+  .project-start {
+    margin-bottom: 20px;
+  }

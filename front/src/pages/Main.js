@@ -1,5 +1,7 @@
 import './Main.css';
 import Footer from '../components/Footer';
+import { Link } from "react-router-dom";
+
 
 const Main = () => {
 
@@ -26,7 +28,7 @@ const Main = () => {
               on ultimate decentralized platform LOOKLOCK.  
             </p>
             <button class="lockdrop-btn">
-              Go To Lockdrop
+              <Link to="/project">Go To Lockdrop</Link>
             </button>
             <div class="statistics">
               <ul id='stats'>
