@@ -72,9 +72,8 @@ Projects launchers can start their projects or see the projects’ progression i
 * [Smart Contract Address](https://mumbai.polygonscan.com/address/0x66ff8b2e0d031d704a9c5b22bf52e6f763a53402)
 
 ## Online Demo
-* Project demo is available at (링크)
-* Description Video (링크)
+* [Project Description Video](https://youtu.be/LYGQxI2Uj2g)
 
 ### Contact
 * Email: crypto4elena@gmail.com
-* Devpost: (Link)
+* [Devpost](https://devpost.com/software/looklock?ref_content=user-portfolio&ref_feature=in_progress)
