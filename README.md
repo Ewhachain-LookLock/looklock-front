@@ -76,5 +76,5 @@ Projects launchers can start their projects or see the projects’ progression i
 * Description Video (링크)
 
 ### Contact
-Email: crypto4elena@gmail.com
-Devpost: (Link)
+* Email: crypto4elena@gmail.com
+* Devpost: (Link)
