@@ -116,12 +116,12 @@ const CustomInnerModal = ({ onRequestClose }) => {
 
 	return (
 		<div className="modal__backdrop">
-			<div className="modal__container">
+			<div className="modal__container modal-success">
                 <div id='modal-img-area'>
                     <img src={require("../Assets/success-modal-img.png")} class='success-modal-img' alt="success img"/>
                 </div>
                 <div id='modal-btn-area'>
-                    <button onClick={onRequestClose} class='modal-withdrawal-btn' id='custom-modal-here'>
+                    <button onClick={onRequestClose} class='modal-withdrawal-btn done-btn' id='custom-modal-here'>
                         Done
                     </button>
                 </div>

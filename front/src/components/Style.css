@@ -441,4 +441,14 @@
 .success-modal-img {
     width: 264px;
     height: 171.48px;
+    margin: 0;
+}
+
+.modal-success {
+    width: 460px;
+    height: 400px;
+}
+
+.done-btn {
+    width: 188px;
 }
