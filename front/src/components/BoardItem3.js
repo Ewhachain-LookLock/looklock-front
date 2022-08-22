@@ -79,15 +79,15 @@ const BoardItem = () => {
             <span>ZELO</span>
             </div>
             <div class='amountlock-items'>
-            <span>1,000</span>
-            <span>UST</span>
+            <span>3,000</span>
+            <span>LOLO</span>
             </div>
-            <span>0.70%</span>
-            <span>22.04.03.</span>
+            <span>0.68%</span>
+            <span>22.05.15.</span>
             <span class='locked-box'>Locked</span>
             <div class='est-rewards-items'>
-            <span>10,000</span>
-            <span>MARS</span>
+            <span>8,000</span>
+            <span>ZELO</span>
             </div>
             <button onClick={toggleModal} class='days-btn' id='custom-modal-here'>-40 days</button>
             {isModalOpen && <CustomModal onRequestClose={toggleModal} />}

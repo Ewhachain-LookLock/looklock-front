@@ -430,3 +430,15 @@
     color: #CDCDCD;
     cursor: not-allowed;    
 }
+
+#modal-img-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+.success-modal-img {
+    width: 264px;
+    height: 171.48px;
+}

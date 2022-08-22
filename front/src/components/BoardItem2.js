@@ -80,22 +80,18 @@ const BoardItem = () => {
             </div>
             <div class='amountlock-items'>
             <span>1,000</span>
-            <span>UST</span>
+            <span>LOLO</span>
             </div>
-            <span>0.70%</span>
-            <span>22.04.03.</span>
+            <span>1.00%</span>
+            <span>22.03.28.</span>
             <span class='locked-box'>Locked</span>
             <div class='est-rewards-items'>
-            <span>10,000</span>
-            <span>MARS</span>
+            <span>7,000</span>
+            <span>BSTN</span>
             </div>
             <button onClick={toggleModal} class='days-btn' id='custom-modal-here'>-30 days</button>
             {isModalOpen && <CustomModal onRequestClose={toggleModal} />}
-            {/* <div id='custom-modal-here'></div> */}
-            {/* <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-                <h3>Modal title</h3>
-                <p>Content</p>
-            </Modal> */}
+
         </div>
     )
 };
